@@ -88,7 +88,7 @@ header.site .wrap{display:flex;flex-wrap:wrap;align-items:center}
 .crumbs span{opacity:.5;margin:0 5px}
 
 /* ---------- Hero ---------- */
-.hero{text-align:center;padding:64px 0 40px;position:relative;overflow:clip}
+.hero{text-align:center;padding:48px 0 22px;position:relative;overflow:clip}
 .hero .lede,.hero>p{max-width:640px;margin:20px auto 0;color:var(--ink-soft);font-size:1.12rem}
 .hero h1{background:linear-gradient(120deg,var(--ink) 40%,var(--accent) 120%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero-quote-mark{font-family:'Fraunces',serif;font-size:3rem;color:var(--gold);line-height:1;display:block;margin-bottom:.2em}
@@ -124,7 +124,7 @@ header.site .wrap{display:flex;flex-wrap:wrap;align-items:center}
 .qcard .tools a:hover{background:var(--accent);color:#fff}
 
 /* ---------- Bands / sections ---------- */
-section{margin:44px 0}
+section{margin:30px 0}
 .band{background:var(--cream);border:1px solid var(--line-soft);border-radius:var(--radius-lg);padding:40px 34px;text-align:center;box-shadow:var(--shadow-sm)}
 .band.accent{background:var(--grad-dark);color:#fff;border:0;box-shadow:var(--shadow-lg)}
 .band.accent h2{color:#fff}
@@ -260,7 +260,7 @@ footer.mega .cols{display:contents}
 /* ---- Responsive navigation: hamburger drawer + scrollable app tabs ---- */
 .navtoggle{display:none;align-items:center;justify-content:center;background:none;border:1.5px solid var(--line);border-radius:10px;font-size:1.15rem;line-height:1;width:44px;height:42px;cursor:pointer;color:var(--ink);margin-left:8px}
 .navtoggle:hover{background:var(--blush);border-color:var(--accent-2)}
-.navdrawer{display:none;flex-direction:column;gap:2px;padding:6px 0 16px}
+.navdrawer{display:none;flex-direction:column;gap:2px;padding:10px 0 18px;width:100%;border-top:1px solid var(--line-soft)}
 .navdrawer a{padding:13px 14px;border-radius:12px;color:var(--ink-soft);font-weight:600;font-size:1.02rem;text-decoration:none}
 .navdrawer a:hover{background:var(--blush);color:var(--accent-dark)}
 .navdrawer .btn{justify-content:center;margin-top:10px;width:100%}
@@ -281,3 +281,10 @@ footer.mega .cols{display:contents}
 }
 body{overflow-wrap:break-word}
 a{overflow-wrap:break-word}
+
+/* ---- Card maker action bar (clean, professional) ---- */
+.cardactions{margin-top:6px}
+.actionrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.act{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--ink-soft);border:1.5px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:700;font-size:.9rem;font-family:inherit;cursor:pointer;transition:border-color .18s var(--ease),color .18s var(--ease),background .18s var(--ease)}
+.act:hover{border-color:var(--accent);color:var(--accent);background:var(--blush)}
+.act span{color:var(--accent)}

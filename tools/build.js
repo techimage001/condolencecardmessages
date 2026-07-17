@@ -104,9 +104,19 @@ function headerNav() {
 <a class="link hidesm" href="/#how">How it works</a>
 <a class="link hidesm" href="/#faq">FAQ</a>
 <a class="link hidesm" href="/contact.html">Contact</a>
-<a class="btn" href="/app.html">Open the Card Maker</a>
+<a class="btn navcta" href="/app.html">Open the Card Maker</a>
 <span class="acct" id="acct"></span>
-</nav></div></header>`;
+<button class="navtoggle" id="navToggle" aria-label="Open menu" aria-controls="navDrawer" aria-expanded="false">\u2630</button>
+</nav>
+<div class="navdrawer" id="navDrawer">
+<a href="/#free">All Free Features</a>
+<a href="/#categories">Categories</a>
+<a href="/#how">How it works</a>
+<a href="/#faq">FAQ</a>
+<a href="/contact.html">Contact</a>
+<a class="btn" href="/app.html">Open the Card Maker</a>
+</div>
+</div></header>`;
 }
 
 function footerMega(cats) {

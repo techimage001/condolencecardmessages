@@ -111,10 +111,17 @@ textarea{min-height:88px;resize:vertical}
 </div>
 <div>
 <div class="field"><label for="qtext">Message</label>
-<textarea id="qtext" maxlength="300">She carried the whole house on her shoulders and still made it feel light.</textarea></div>
+<textarea id="qtext" maxlength="300">Thinking of you and holding you close in my heart.</textarea></div>
 <div class="field"><label for="qby">Attribution</label>
-<input type="text" id="qby" maxlength="80" value="Condolence Card Messages"></div>
-<div class="field"><label>Background</label><div class="swatches" id="bgs"></div><div style="margin-top:10px;display:flex;align-items:center;gap:10px"><label for="customBg" style="margin:0;text-transform:none;letter-spacing:0;font-size:.82rem;color:var(--muted);cursor:pointer">Or pick any colour:</label><input type="color" id="customBg" value="#B04B66" style="width:44px;height:36px;border:1.5px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;padding:2px"></div></div>
+<input type="text" id="qby" maxlength="80" value="" placeholder="Optional, e.g. With love, the Smiths"></div>
+<div class="field"><label>Photo (optional)</label>
+<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+<input type="file" id="photoInput" accept="image/*" style="display:none">
+<button type="button" class="btn ghost" id="photoBtn" style="padding:9px 16px">Add a photo</button>
+<button type="button" id="photoRemove" class="linklike" style="display:none">Remove photo</button>
+</div>
+<p style="margin:8px 0 0;font-size:.8rem;color:var(--muted)">Add a photo of your loved one or pet. It never leaves your device.</p></div>
+<div class="field"><label>Background</label><div class="swatches" id="bgs"></div><div style="margin-top:10px;display:flex;align-items:center;gap:10px"><label for="customBg" style="margin:0;text-transform:none;letter-spacing:0;font-size:.82rem;color:var(--muted);cursor:pointer">Or pick any colour:</label><input type="color" id="customBg" value="#5E7385" style="width:44px;height:36px;border:1.5px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;padding:2px"></div></div>
 <div class="field"><label>Illustration (optional)</label><div class="segs" id="illos">
 <button aria-pressed="true" data-illo="none">None</button>
 <button aria-pressed="false" data-illo="heart">Heart</button>
@@ -507,6 +514,28 @@ function drawIllo(name, s, col){
 
 /* ---- Frames, little accents and text styles (all optional, code-drawn, copyright-safe) ---- */
 var FRAME_STATE={frame:'none'}, MOTIF_STATE={motif:'none'}, WORDART_STATE={wordart:'clean'};
+var PHOTO_STATE={img:null};
+(function(){
+  var pin=document.getElementById('photoInput'),pbtn=document.getElementById('photoBtn'),prm=document.getElementById('photoRemove');
+  if(pin&&pbtn){
+    pbtn.addEventListener('click',function(){pin.click();});
+    pin.addEventListener('change',function(e){
+      var f=e.target.files&&e.target.files[0];if(!f)return;
+      var img=new Image();img.onload=function(){PHOTO_STATE.img=img;prm.style.display='';draw();};
+      img.src=URL.createObjectURL(f);
+    });
+    prm.addEventListener('click',function(){PHOTO_STATE.img=null;pin.value='';prm.style.display='none';draw();});
+  }
+})();
+function roundedImageCover(img,x,y,w,h,r){
+  function path(){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+  ctx.save();ctx.shadowColor='rgba(46,39,51,.28)';ctx.shadowBlur=w*.05;ctx.shadowOffsetY=w*.02;path();ctx.fillStyle='#fff';ctx.fill();ctx.restore();
+  ctx.save();path();ctx.clip();
+  var ir=img.width/img.height,tr=w/h,dw,dh,dx,dy;
+  if(ir>tr){dh=h;dw=h*ir;dx=x-(dw-w)/2;dy=y;}else{dw=w;dh=w/ir;dx=x;dy=y-(dh-h)/2;}
+  ctx.drawImage(img,dx,dy,dw,dh);ctx.restore();
+  ctx.save();path();ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=Math.max(3,w*.012);ctx.stroke();ctx.restore();
+}
 function wireSeg(id,stateObj,key){
   var wrap=document.getElementById(id);
   if(!wrap)return;
@@ -682,18 +711,26 @@ function draw(){
   var text=document.getElementById('qtext').value.trim()||'Your quote here';
   if(wa==='statement')text=text.toUpperCase();
   var by=document.getElementById('qby').value.trim();
+  var photoBottom=0;
+  if(PHOTO_STATE.img){
+    var pw=s.w*0.74, phh=s.h*0.40, pxx=(s.w-pw)/2, pyy=s.h*0.085;
+    roundedImageCover(PHOTO_STATE.img,pxx,pyy,pw,phh,s.w*0.035);
+    photoBottom=pyy+phh;
+  }
+  var regionTop = photoBottom ? photoBottom + s.h*0.045 : 0;
+  var regionH = (s.h*0.90) - regionTop;
   var px=Math.round(s.w*.075),lines;
   do{lines=wrapLines(text,px,maxW);var block=lines.length*px*1.28;
-     if(block>s.h*.55||lines.some(function(l){ctx.font=fontStack('600',px);return ctx.measureText(l).width>maxW;}))px-=3;else break;
-  }while(px>26);
+     if(block>regionH*0.80||lines.some(function(l){ctx.font=fontStack('600',px);return ctx.measureText(l).width>maxW;}))px-=3;else break;
+  }while(px>24);
   var totalH=lines.length*px*1.28;
-  var startY=(s.h-totalH)/2+px*.4;
+  var startY=regionTop+(regionH-totalH)/2+px*.4;
   ctx.textAlign='center';
-  var markScale=(wa==='quotes')?2.3:1.9;
+  var markScale=(wa==='quotes')?2.3:1.9; if(PHOTO_STATE.img)markScale=1.1;
   var openBaseY=startY-px*1.05;
   var markTopY=openBaseY-px*markScale*0.72;
   // little accent sits as a compact unit just above the opening mark, always with a gap
-  if(MOTIF_STATE.motif!=='none'){
+  if(MOTIF_STATE.motif!=='none' && !PHOTO_STATE.img){
     var motifR=s.w*0.038, mgap=px*0.5;
     var motifCy=markTopY-mgap-motifR;
     if(motifCy<s.w*0.03)motifCy=s.w*0.03;

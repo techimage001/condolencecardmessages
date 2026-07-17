@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Condolence Card Maker: Condolence Card Messages</title>
+<meta name="description" content="Turn any condolence or sympathy message into a beautiful card. Free: pick a design, a font and a size, then download or print your card.">
+<link rel="canonical" href="https://condolencecardmessages.com/app.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Condolence Card Maker | Condolence Card Messages">
+<meta property="og:description" content="Turn any sympathy message into a beautiful card. Free to use.">
+<meta property="og:url" content="https://condolencecardmessages.com/app.html">
+<meta property="og:image" content="https://condolencecardmessages.com/og/home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://condolencecardmessages.com/og/home.png">
+<meta property="og:site_name" content="Condolence Card Messages">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#A64D63">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Karla:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=5">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4138594802747479" crossorigin="anonymous"></script>
+<style>
+.tabs{display:flex;gap:6px;padding:10px 0;flex-wrap:wrap}
+.tabs button{font-family:inherit;font-weight:800;font-size:.9rem;padding:9px 16px;border-radius:999px;border:2px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:.16s}
+.tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 8px 18px -10px rgba(166,77,99,.7)}
+.panel{display:none}
+.panel.active{display:block}
+.maker{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-top:18px}
+@media(max-width:820px){
+  .maker{grid-template-columns:1fr}
+  header.site{position:static}
+  .stage{position:sticky;top:0;z-index:20;padding:12px;border-radius:0 0 20px 20px;box-shadow:0 12px 22px -14px rgba(46,39,51,.55)}
+  .stage canvas#cv{max-height:38vh;width:auto;max-width:100%}
+  .stage .note{font-size:.76rem;margin:6px 0 0}
+}
+.stage{background:var(--grad-warm,var(--wash));border:1px solid var(--line-soft,var(--line));border-radius:var(--radius-lg,24px);padding:22px;text-align:center;box-shadow:var(--shadow-md,0 8px 30px -8px rgba(46,39,51,.14));position:sticky;top:112px;align-self:start}
+canvas#cv{max-width:100%;height:auto;border-radius:12px;box-shadow:0 3px 8px rgba(55,48,63,.16), 0 26px 50px -22px rgba(55,48,63,.7)}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:800;font-size:.85rem;margin-bottom:6px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+textarea,input[type=text],input[type=email]{width:100%;font-family:inherit;font-size:1rem;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+textarea{min-height:88px;resize:vertical}
+.swatches{display:flex;gap:9px;flex-wrap:wrap}
+.swatches button{width:44px;height:44px;border-radius:12px;border:3px solid transparent;cursor:pointer;box-shadow:0 6px 16px -8px rgba(55,48,63,.7);transition:transform .15s}
+.swatches button:hover{transform:translateY(-2px)}
+.swatches button[aria-pressed="true"]{border-color:var(--gold)}
+.segs{display:flex;gap:8px;flex-wrap:wrap}
+.segs button{font-family:inherit;font-weight:700;font-size:.88rem;padding:9px 14px;border-radius:999px;border:2px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:.16s}
+.segs button[aria-pressed="true"]{background:var(--grad-accent,var(--accent));border-color:transparent;color:#fff;box-shadow:0 8px 18px -10px rgba(176,75,102,.6)}
+.qrow{background:#fff;border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:var(--radius);padding:16px;margin-bottom:12px;box-shadow:0 1px 2px rgba(55,48,63,.05), 0 12px 28px -24px rgba(55,48,63,.6)}
+.qrow blockquote{font-family:'Fraunces',Georgia,serif;font-size:1.08rem;line-height:1.4}
+.qrow .by{color:var(--muted);font-size:.82rem;margin-top:6px}
+.qrow .row-tools{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.qrow .row-tools button{font-family:inherit;font-size:.82rem;font-weight:700;padding:6px 13px;border-radius:999px;border:2px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer}
+.qrow .row-tools button:hover{background:var(--accent);color:#fff}
+.daily-card{background:linear-gradient(160deg,#4A3A50,#37303F);color:#FBF3EE;border-radius:20px;padding:38px 26px;text-align:center;max-width:560px;margin:0 auto 18px;position:relative;box-shadow:0 30px 70px -34px rgba(55,48,63,.75), inset 0 1px 0 rgba(255,255,255,.07)}
+.daily-card::after{content:'';position:absolute;inset:0;border-radius:20px;pointer-events:none;background:radial-gradient(500px 190px at 80% -16%, rgba(201,150,46,.2), transparent 66%)}
+.daily-card .qm{font-family:'Fraunces',Georgia,serif;font-size:3.2rem;line-height:.6;color:var(--gold);display:block;margin-bottom:6px}
+.daily-card blockquote{font-family:'Fraunces',Georgia,serif;font-size:1.3rem;line-height:1.35}
+.daily-card .by{margin-top:12px;font-size:.8rem;letter-spacing:.08em;color:#D9C7CE}
+.settings-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:16px;box-shadow:0 1px 2px rgba(55,48,63,.05), 0 14px 30px -26px rgba(55,48,63,.6)}
+.settings-card h3{margin-bottom:8px}
+.settings-card ul{margin:8px 0 0 18px}
+.modal{position:fixed;inset:0;background:rgba(55,48,63,.6);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+.modal.open{display:flex}
+.modal .box{background:var(--paper);border-radius:20px;max-width:460px;width:100%;padding:30px;text-align:center}
+.modal h2{font-size:1.5rem;margin-bottom:8px}
+.modal .bigfree{font-weight:800;font-size:1.02rem;margin:12px 0}
+.modal .bigfree strong{color:var(--accent)}
+.modal .consent{font-size:.78rem;color:var(--muted);margin-top:12px;line-height:1.45}
+.modal .err{color:#A6342B;font-weight:700;font-size:.9rem;margin-top:10px;display:none}
+.modal .okmsg{color:#2E6B3C;font-weight:700;font-size:.95rem;margin-top:10px;display:none}
+.hp-field{position:absolute;left:-9999px;top:-9999px}
+.btn.small{padding:7px 15px;font-size:.85rem}
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Condolence Card Messages Card Maker","applicationCategory":"DesignApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://condolencecardmessages.com/app.html","publisher":{"@type":"Organization","name":"Condolence Card Messages","url":"https://condolencecardmessages.com/"}}</script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<nav class="nav" aria-label="Main">
+<a class="logo" href="/">Condolence<em>Card</em>Messages</a>
+<span class="spacer"></span>
+<a class="link" href="/#free">All Free Features</a>
+<a class="link hidesm" href="/#faq">FAQ</a>
+<a class="link hidesm" href="/">Home</a>
+<span class="acct" id="acct"></span>
+</nav>
+<div class="tabs" role="tablist" aria-label="App sections">
+<button role="tab" aria-selected="true" data-tab="maker">Card Maker</button>
+<button role="tab" aria-selected="false" data-tab="daily">Today's Message</button>
+<button role="tab" aria-selected="false" data-tab="favorites">Favorites</button>
+<button role="tab" aria-selected="false" data-tab="mine">My Messages</button>
+<button role="tab" aria-selected="false" data-tab="settings">Settings</button>
+</div>
+</div></header>
+
+<main><div class="wrap">
+
+<section class="panel active" id="panel-maker" role="tabpanel">
+<div class="maker">
+<div class="stage">
+<canvas id="cv" width="1080" height="1080" aria-label="Card preview"></canvas>
+<p class="note">Live preview. Downloads are full resolution.</p>
+</div>
+<div>
+<div class="field"><label for="qtext">Message</label>
+<textarea id="qtext" maxlength="300">She carried the whole house on her shoulders and still made it feel light.</textarea></div>
+<div class="field"><label for="qby">Attribution</label>
+<input type="text" id="qby" maxlength="80" value="Condolence Card Messages"></div>
+<div class="field"><label>Background</label><div class="swatches" id="bgs"></div><div style="margin-top:10px;display:flex;align-items:center;gap:10px"><label for="customBg" style="margin:0;text-transform:none;letter-spacing:0;font-size:.82rem;color:var(--muted);cursor:pointer">Or pick any colour:</label><input type="color" id="customBg" value="#B04B66" style="width:44px;height:36px;border:1.5px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;padding:2px"></div></div>
+<div class="field"><label>Illustration (optional)</label><div class="segs" id="illos">
+<button aria-pressed="true" data-illo="none">None</button>
+<button aria-pressed="false" data-illo="heart">Heart</button>
+<button aria-pressed="false" data-illo="sun">Sunrise</button>
+<button aria-pressed="false" data-illo="hills">Hills</button>
+<button aria-pressed="false" data-illo="waves">Waves</button>
+</div></div>
+<div class="field"><label>Frame (optional)</label><div class="segs" id="frames">
+<button aria-pressed="true" data-frame="none">None</button>
+<button aria-pressed="false" data-frame="classic">Classic</button>
+<button aria-pressed="false" data-frame="gold">Gold deco</button>
+<button aria-pressed="false" data-frame="arch">Soft arch</button>
+<button aria-pressed="false" data-frame="botanical">Botanical</button>
+<button aria-pressed="false" data-frame="ribbon">Ribbon</button>
+<button aria-pressed="false" data-frame="minimal">Minimal inset</button>
+</div></div>
+<div class="field"><label>Little accent (optional)</label><div class="segs" id="motifs">
+<button aria-pressed="true" data-motif="none">None</button>
+<button aria-pressed="false" data-motif="heart">&hearts; Heart</button>
+<button aria-pressed="false" data-motif="star">Star</button>
+<button aria-pressed="false" data-motif="sparkle">Sparkles</button>
+<button aria-pressed="false" data-motif="flower">Flower</button>
+<button aria-pressed="false" data-motif="leaf">Leaf</button>
+<button aria-pressed="false" data-motif="sun">Sun</button>
+</div></div>
+<div class="field"><label>Text style (optional)</label><div class="segs" id="wordarts">
+<button aria-pressed="true" data-wordart="clean">Clean</button>
+<button aria-pressed="false" data-wordart="underline">Underline</button>
+<button aria-pressed="false" data-wordart="statement">Statement</button>
+<button aria-pressed="false" data-wordart="quotes">Quote marks</button>
+</div></div>
+<div class="field"><label>Font style</label><div class="segs" id="fonts">
+<button aria-pressed="true" data-font="serif">Elegant serif</button>
+<button aria-pressed="false" data-font="clean">Clean modern</button>
+<button aria-pressed="false" data-font="italic">Soft italic</button>
+</div></div>
+<div class="field"><label>Size</label><div class="segs" id="sizes">
+<button aria-pressed="true" data-size="square">Instagram square</button>
+<button aria-pressed="false" data-size="pin">Pinterest pin</button>
+<button aria-pressed="false" data-size="story">Story</button>
+<button aria-pressed="false" data-size="facebook">Facebook post</button>
+<button aria-pressed="false" data-size="linkedin">LinkedIn post</button>
+</div></div>
+<button class="btn" id="downloadBtn">Download this card</button>
+<button class="btn gold" id="shareBtn" style="margin-left:8px">Share</button>
+<button class="btn ghost" id="favBtn" style="margin-left:8px">&hearts; Save to favorites</button>
+<p class="note" id="usesNote"></p>
+</div>
+</div>
+<div class="adslot">
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4138594802747479" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<section class="popular">
+<h2>Need a message to start with?</h2>
+<p class="note" style="margin-bottom:10px">Pick a collection, tap Make this a card on any message, and it lands here ready to style.</p>
+<div class="chips">
+<a href="/what-to-write-in-a-sympathy-card.html">What to Write in a Sympathy Card</a>
+<a href="/sympathy-card-messages.html">Sympathy Card Messages</a>
+<a href="/condolence-messages.html">Condolence Messages</a>
+<a href="/words-of-condolence.html">Words of Condolence</a>
+<a href="/short-condolence-message.html">Short Condolence Messages</a>
+<a href="/deepest-sympathy-messages.html">Deepest Sympathy Messages</a>
+<a href="/funeral-flower-card-messages.html">Funeral Flower Card Messages</a>
+<a href="/in-loving-memory-messages.html">In Loving Memory Messages</a>
+</div>
+</section>
+</section>
+
+<section class="panel" id="panel-daily" role="tabpanel">
+<div class="daily-card">
+<span class="qm">&ldquo;</span>
+<blockquote id="dailyText"></blockquote>
+<p class="by" id="dailyBy"></p>
+</div>
+<div class="center">
+<button class="btn" id="dailyMake">Make this a card</button>
+<button class="btn ghost" id="dailyFav">&hearts; Save</button>
+<button class="btn ghost" id="dailyShuffle">Show me another</button>
+<p class="note" style="margin-top:12px">A fresh message is ready here every day. Like every web app, it rests while fully closed, so today's message is waiting whenever you open this page.</p>
+<p class="note" id="dailySource" style="margin-top:8px"></p>
+</div>
+</section>
+
+<section class="panel" id="panel-favorites" role="tabpanel">
+<h2 style="margin-bottom:14px">Your favorites</h2>
+<div id="favList"></div>
+<p class="note" id="favEmpty">No favorites yet. Tap the heart on any quote to keep it here, or browse the <a href="/sympathy-card-messages.html">sympathy card messages</a> to find some. Favorites are saved on this device; use Backup in Settings before switching phones.</p>
+</section>
+
+<section class="panel" id="panel-mine" role="tabpanel">
+<h2 style="margin-bottom:14px">My messages</h2>
+<div class="field"><label for="mineText">Write your own message</label>
+<textarea id="mineText" maxlength="300" placeholder="Your own words, for your own card"></textarea></div>
+<button class="btn" id="mineAdd">Save my message</button>
+<div id="mineList" style="margin-top:20px"></div>
+</section>
+
+<section class="panel" id="panel-settings" role="tabpanel">
+<h2 style="margin-bottom:14px">Settings</h2>
+<div class="settings-card">
+<h3>Backup and restore</h3>
+<p>Your favorites and your own messages live on this device, in this browser. Download a backup before switching phones or clearing your browser, then restore it anywhere.</p>
+<p style="margin-top:12px">
+<button class="btn small" id="backupBtn">Download backup</button>
+<label class="btn small ghost" style="cursor:pointer">Restore backup<input type="file" id="restoreFile" accept="application/json" style="display:none"></label>
+</p>
+</div>
+<div class="settings-card">
+<h3>Why Condolence Card Messages</h3>
+<p>Everything typical sympathy card apps charge for is free here.</p>
+<ul>
+<li><a href="/#free">All Free Features: the full comparison</a></li>
+<li><a href="/#how">How it works</a></li>
+<li><a href="/#faq">FAQ</a></li>
+<li><a href="/#about">About the messages</a></li>
+<li><a href="/contact.html">Contact us</a></li>
+</ul>
+</div>
+<div class="settings-card">
+<h3>Your account</h3>
+<p id="acctState">You have not signed in on this device yet.</p>
+<p class="note">Signing up is free: one email, one click on the link we send, and the card maker unlocks. Using a new phone? Tap Sign in at the top and enter the same email.</p>
+</div>
+<div class="settings-card">
+<h3>Your privacy, plainly</h3>
+<p>Nothing you make or save in this app is sent to our servers. The only thing we ever store is the email address you confirm at signup. Full details in the <a href="/privacy.html">privacy policy</a> and <a href="/terms.html">terms of use</a>.</p>
+</div>
+</section>
+
+</div></main>
+
+<div class="modal" id="gateModal" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+<div class="box">
+<span class="crest" aria-hidden="true">&#10022;</span>
+<h2 id="gateTitle">Keep making free cards</h2>
+<p id="gateSub">You have used your three free downloads. Confirm your email to keep going.</p>
+<ul class="perks" id="gatePerks">
+<li>Unlimited cards</li>
+<li>Every background and font</li>
+<li>Pinterest, Instagram and story sizes</li>
+<li>Favorites and your own messages</li>
+</ul>
+<p class="bigfree"><strong>100% FREE right now. No payment, no card details needed. Signing up costs nothing.</strong></p>
+<form id="gateForm">
+<div class="hp-field" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+<div class="field"><input type="email" id="gateEmail" placeholder="you@example.com" required autocomplete="email" aria-label="Email address"></div>
+<button class="btn" type="submit" id="gateSubmit">Send my free unlock link</button>
+<p class="err" id="gateErr"></p>
+<p class="okmsg" id="gateOk"></p>
+<p class="gate-alt" id="gateAlt">Already signed up? <button type="button" id="toSignin" style="background:none;border:0;color:var(--accent);font-weight:800;cursor:pointer;font-family:inherit;text-decoration:underline">Enter the same email to unlock this device.</button></p>
+<p class="consent">We send one confirmation link, then occasional tips and offers by email. Unsubscribe anytime. See our <a href="/privacy.html">privacy policy</a>. Confirming keeps the card maker unlocked on this device.</p>
+</form>
+</div>
+</div>
+
+<footer class="mega"><div class="wrap">
+<div class="cols">
+<div><h3>Quote categories</h3><ul><li><a href="/what-to-write-in-a-sympathy-card.html">What to Write in a Sympathy Card</a></li>
+<li><a href="/sympathy-card-messages.html">Sympathy Card Messages</a></li>
+<li><a href="/condolence-messages.html">Condolence Messages</a></li>
+<li><a href="/words-of-condolence.html">Words of Condolence</a></li>
+<li><a href="/short-condolence-message.html">Short Condolence Messages</a></li>
+<li><a href="/sorry-for-your-loss-messages.html">Sorry for Your Loss Messages</a></li>
+<li><a href="/deepest-sympathy-messages.html">Deepest Sympathy Messages</a></li>
+<li><a href="/condolence-message-to-a-friend.html">Condolence Messages for a Friend</a></li>
+<li><a href="/sympathy-messages-for-loss-of-mother.html">Sympathy Messages for Loss of a Mother</a></li>
+<li><a href="/sympathy-messages-for-loss-of-father.html">Sympathy Messages for Loss of a Father</a></li>
+<li><a href="/religious-condolence-messages.html">Religious Condolence Messages</a></li>
+<li><a href="/funeral-flower-card-messages.html">Funeral Flower Card Messages</a></li>
+<li><a href="/bereavement-messages.html">Bereavement Messages</a></li>
+<li><a href="/pet-loss-sympathy-messages.html">Pet Loss Sympathy Messages</a></li>
+<li><a href="/sympathy-messages-for-a-coworker.html">Sympathy Messages for a Coworker</a></li>
+<li><a href="/in-loving-memory-messages.html">In Loving Memory Messages</a></li></ul></div>
+<div><h3>Free tools</h3><ul>
+<li><a href="/app.html">Card Maker</a></li>
+<li><a href="/app.html#daily">Today's message</a></li>
+<li><a href="/app.html#mine">Write your own message</a></li>
+<li><a href="/app.html#favorites">Your favorites</a></li>
+</ul></div>
+<div><h3>Why Condolence Card Messages</h3><ul>
+<li><a href="/#free">All Free Features</a></li>
+<li><a href="/#how">How it works</a></li>
+<li><a href="/#faq">FAQ</a></li>
+<li><a href="/#about">About the messages</a></li>
+</ul></div>
+<div><h3>Site</h3><ul>
+<li><a href="/contact.html">Contact us</a></li>
+<li><a href="/privacy.html">Privacy policy</a></li>
+<li><a href="/terms.html">Terms of use</a></li>
+</ul></div>
+</div>
+<p class="legal">&copy; 2026 Condolence Card Messages. All messages on this site are original and free to use for your own cards and notes. The card maker is currently free to use.</p>
+</div></footer>
+
+<script src="/site.js?v=4" defer></script>
+<script>
+'use strict';
+/*POOL_START*/var QUOTE_POOL=[{"t":"There are no words big enough for a loss like this, so I will simply say: I am here, and I am not going anywhere.","b":"Condolence Card Messages","c":"What to Write in a Sympathy Card","s":"what-to-write-in-a-sympathy-card"},{"t":"I keep thinking about the way they lit up a room. That light does not just switch off. It stays in everyone who loved them.","b":"Condolence Card Messages","c":"What to Write in a Sympathy Card","s":"what-to-write-in-a-sympathy-card"},{"t":"You do not have to be strong for me. However today finds you is exactly how you are allowed to be.","b":"Condolence Card Messages","c":"What to Write in a Sympathy Card","s":"what-to-write-in-a-sympathy-card"},{"t":"I wish I could take even a little of the weight off your shoulders. Since I cannot, let me carry the small things: the meals, the calls, the errands. Just ask.","b":"Condolence Card Messages","c":"What to Write in a Sympathy Card","s":"what-to-write-in-a-sympathy-card"},{"t":"Some people leave a mark so deep that the world feels different without them. Yours did. I am so sorry.","b":"Condolence Card Messages","c":"What to Write in a Sympathy Card","s":"what-to-write-in-a-sympathy-card"},{"t":"Grief is love with nowhere to go. Yours is enormous because your love was.","b":"Condolence Card Messages","c":"What to Write in a Sympathy Card","s":"what-to-write-in-a-sympathy-card"},{"t":"I will remember them with you, for as long as you need me to.","b":"Condolence Card Messages","c":"What to Write in a Sympathy Card","s":"what-to-write-in-a-sympathy-card"},{"t":"Please do not worry about replying to this. I only wanted you to know you are held in my thoughts today and every day this week.","b":"Condolence Card Messages","c":"What to Write in a Sympathy Card","s":"what-to-write-in-a-sympathy-card"},{"t":"Whatever you need, whenever you need it, at whatever hour: I mean it.","b":"Condolence Card Messages","c":"What to Write in a Sympathy Card","s":"what-to-write-in-a-sympathy-card"},{"t":"I am so deeply sorry. May the memories that hurt today become the ones that comfort you in time.","b":"Condolence Card Messages","c":"What to Write in a Sympathy Card","s":"what-to-write-in-a-sympathy-card"},{"t":"Holding you close in my heart while yours is breaking.","b":"Condolence Card Messages","c":"Sympathy Card Messages","s":"sympathy-card-messages"},{"t":"May you feel surrounded by love, even on the days it is hard to feel anything at all.","b":"Condolence Card Messages","c":"Sympathy Card Messages","s":"sympathy-card-messages"},{"t":"Their kindness touched more lives than they ever knew, mine among them.","b":"Condolence Card Messages","c":"Sympathy Card Messages","s":"sympathy-card-messages"},{"t":"Sending you strength for today and gentleness for all the quiet days after.","b":"Condolence Card Messages","c":"Sympathy Card Messages","s":"sympathy-card-messages"},{"t":"You are not alone in this. Lean on the people who love you, and let me be one of them.","b":"Condolence Card Messages","c":"Sympathy Card Messages","s":"sympathy-card-messages"},{"t":"What a gift it was to have known them. What a loss it is to say goodbye.","b":"Condolence Card Messages","c":"Sympathy Card Messages","s":"sympathy-card-messages"},{"t":"Thinking of you with more love than this small card can hold.","b":"Condolence Card Messages","c":"Sympathy Card Messages","s":"sympathy-card-messages"},{"t":"May happy memories bring you moments of peace between the waves.","b":"Condolence Card Messages","c":"Sympathy Card Messages","s":"sympathy-card-messages"},{"t":"I am keeping you in my thoughts and holding a little of your sorrow with you.","b":"Condolence Card Messages","c":"Sympathy Card Messages","s":"sympathy-card-messages"},{"t":"With heartfelt sympathy, and a promise to check in again soon.","b":"Condolence Card Messages","c":"Sympathy Card Messages","s":"sympathy-card-messages"},{"t":"My heart goes out to you and your family during this painful time.","b":"Condolence Card Messages","c":"Condolence Messages","s":"condolence-messages"},{"t":"Please accept my deepest condolences. They were truly one of a kind.","b":"Condolence Card Messages","c":"Condolence Messages","s":"condolence-messages"},{"t":"So sorry for your loss. May the love around you carry you through the hardest days.","b":"Condolence Card Messages","c":"Condolence Messages","s":"condolence-messages"},{"t":"Sending you comfort, and the reminder that you do not have to face this alone.","b":"Condolence Card Messages","c":"Condolence Messages","s":"condolence-messages"},{"t":"With sincere sympathy for the loss of someone so dearly loved.","b":"Condolence Card Messages","c":"Condolence Messages","s":"condolence-messages"},{"t":"May they rest peacefully, and may your memories of them bring you quiet comfort.","b":"Condolence Card Messages","c":"Condolence Messages","s":"condolence-messages"},{"t":"Words feel small right now, but my care for you is not. I am so sorry.","b":"Condolence Card Messages","c":"Condolence Messages","s":"condolence-messages"},{"t":"Thinking of you and wishing you moments of peace in the days ahead.","b":"Condolence Card Messages","c":"Condolence Messages","s":"condolence-messages"},{"t":"Please know that so many people are holding you in their hearts today.","b":"Condolence Card Messages","c":"Condolence Messages","s":"condolence-messages"},{"t":"My condolences to you and everyone who loved them. They will be deeply missed.","b":"Condolence Card Messages","c":"Condolence Messages","s":"condolence-messages"},{"t":"Some goodbyes are too heavy to carry alone. Let the people who love you help you hold this one.","b":"Condolence Card Messages","c":"Words of Condolence","s":"words-of-condolence"},{"t":"A life that touched so many does not truly end. It lives on in every person it changed.","b":"Condolence Card Messages","c":"Words of Condolence","s":"words-of-condolence"},{"t":"May you find, in time, that remembering them brings a small smile before it brings the ache.","b":"Condolence Card Messages","c":"Words of Condolence","s":"words-of-condolence"},{"t":"There is no timeline for grief. Take all the time your heart needs.","b":"Condolence Card Messages","c":"Words of Condolence","s":"words-of-condolence"},{"t":"The love you shared cannot be undone by loss. It is yours to keep forever.","b":"Condolence Card Messages","c":"Words of Condolence","s":"words-of-condolence"},{"t":"I hope you feel gently carried by the many people who care for you right now.","b":"Condolence Card Messages","c":"Words of Condolence","s":"words-of-condolence"},{"t":"Even in the deepest sorrow, may you find small moments of peace to rest in.","b":"Condolence Card Messages","c":"Words of Condolence","s":"words-of-condolence"},{"t":"They were loved, they knew it, and that love does not disappear.","b":"Condolence Card Messages","c":"Words of Condolence","s":"words-of-condolence"},{"t":"May comfort find you quietly, in the memories, the photos, and the people who share them.","b":"Condolence Card Messages","c":"Words of Condolence","s":"words-of-condolence"},{"t":"You are stronger than you feel today, and softer than you need to be. Both are okay.","b":"Condolence Card Messages","c":"Words of Condolence","s":"words-of-condolence"},{"t":"Thinking of you with love.","b":"Condolence Card Messages","c":"Short Condolence Messages","s":"short-condolence-message"},{"t":"So sorry for your loss.","b":"Condolence Card Messages","c":"Short Condolence Messages","s":"short-condolence-message"},{"t":"Here for you, always.","b":"Condolence Card Messages","c":"Short Condolence Messages","s":"short-condolence-message"},{"t":"Holding you in my heart.","b":"Condolence Card Messages","c":"Short Condolence Messages","s":"short-condolence-message"},{"t":"With deepest sympathy.","b":"Condolence Card Messages","c":"Short Condolence Messages","s":"short-condolence-message"},{"t":"Sending you strength and love.","b":"Condolence Card Messages","c":"Short Condolence Messages","s":"short-condolence-message"},{"t":"You are not alone.","b":"Condolence Card Messages","c":"Short Condolence Messages","s":"short-condolence-message"},{"t":"Wishing you comfort and peace.","b":"Condolence Card Messages","c":"Short Condolence Messages","s":"short-condolence-message"},{"t":"My heart is with you.","b":"Condolence Card Messages","c":"Short Condolence Messages","s":"short-condolence-message"},{"t":"Gone from sight, never from the heart.","b":"Condolence Card Messages","c":"Short Condolence Messages","s":"short-condolence-message"},{"t":"I am so sorry for your loss. They mattered, and so does your grief.","b":"Condolence Card Messages","c":"Sorry for Your Loss Messages","s":"sorry-for-your-loss-messages"},{"t":"Sorry does not feel like enough, but I mean it with my whole heart.","b":"Condolence Card Messages","c":"Sorry for Your Loss Messages","s":"sorry-for-your-loss-messages"},{"t":"I am sorry you are hurting. I am here for whatever comes next.","b":"Condolence Card Messages","c":"Sorry for Your Loss Messages","s":"sorry-for-your-loss-messages"},{"t":"So sorry you have to say goodbye to someone so loved.","b":"Condolence Card Messages","c":"Sorry for Your Loss Messages","s":"sorry-for-your-loss-messages"},{"t":"I am sorry. Please let the people around you carry you for a while.","b":"Condolence Card Messages","c":"Sorry for Your Loss Messages","s":"sorry-for-your-loss-messages"},{"t":"Sorry for your loss, and grateful for the person they were.","b":"Condolence Card Messages","c":"Sorry for Your Loss Messages","s":"sorry-for-your-loss-messages"},{"t":"I am sorry. May the good memories be the loudest ones in time.","b":"Condolence Card Messages","c":"Sorry for Your Loss Messages","s":"sorry-for-your-loss-messages"},{"t":"So deeply sorry. Take all the space you need to feel this.","b":"Condolence Card Messages","c":"Sorry for Your Loss Messages","s":"sorry-for-your-loss-messages"},{"t":"I am sorry for your loss and thinking of you more than you know.","b":"Condolence Card Messages","c":"Sorry for Your Loss Messages","s":"sorry-for-your-loss-messages"},{"t":"Sorry is a small word for a big loss, but it comes with all my love.","b":"Condolence Card Messages","c":"Sorry for Your Loss Messages","s":"sorry-for-your-loss-messages"},{"t":"With our deepest sympathy, and our arms around you from afar.","b":"Condolence Card Messages","c":"Deepest Sympathy Messages","s":"deepest-sympathy-messages"},{"t":"Please accept our heartfelt condolences. Their memory will always be a blessing.","b":"Condolence Card Messages","c":"Deepest Sympathy Messages","s":"deepest-sympathy-messages"},{"t":"Our deepest sympathies to you and your family. May you find comfort in one another.","b":"Condolence Card Messages","c":"Deepest Sympathy Messages","s":"deepest-sympathy-messages"},{"t":"From the bottom of my heart, I am so sorry. They were extraordinary.","b":"Condolence Card Messages","c":"Deepest Sympathy Messages","s":"deepest-sympathy-messages"},{"t":"With the deepest sympathy for a loss that words cannot measure.","b":"Condolence Card Messages","c":"Deepest Sympathy Messages","s":"deepest-sympathy-messages"},{"t":"Our hearts are with you. May love surround you until the pain softens.","b":"Condolence Card Messages","c":"Deepest Sympathy Messages","s":"deepest-sympathy-messages"},{"t":"Sending our most heartfelt condolences and our steady, ongoing support.","b":"Condolence Card Messages","c":"Deepest Sympathy Messages","s":"deepest-sympathy-messages"},{"t":"With profound sympathy, and a promise that they will not be forgotten.","b":"Condolence Card Messages","c":"Deepest Sympathy Messages","s":"deepest-sympathy-messages"},{"t":"May you feel the depth of how many people are grieving alongside you.","b":"Condolence Card Messages","c":"Deepest Sympathy Messages","s":"deepest-sympathy-messages"},{"t":"Our deepest condolences. Please lean on us whenever you need to.","b":"Condolence Card Messages","c":"Deepest Sympathy Messages","s":"deepest-sympathy-messages"},{"t":"You have always been there for me. Now it is my turn. I am not going anywhere.","b":"Condolence Card Messages","c":"Condolence Messages for a Friend","s":"condolence-message-to-a-friend"},{"t":"I cannot make this better, but I can sit with you in it for as long as you need.","b":"Condolence Card Messages","c":"Condolence Messages for a Friend","s":"condolence-message-to-a-friend"},{"t":"You do not have to hold it together with me. I have got you either way.","b":"Condolence Card Messages","c":"Condolence Messages for a Friend","s":"condolence-message-to-a-friend"},{"t":"I am one phone call away, at any hour, for anything at all.","b":"Condolence Card Messages","c":"Condolence Messages for a Friend","s":"condolence-message-to-a-friend"},{"t":"I am so sorry, my friend. Let me handle the little things so you can breathe.","b":"Condolence Card Messages","c":"Condolence Messages for a Friend","s":"condolence-message-to-a-friend"},{"t":"Your heart is one of the kindest I know. I hate that it is hurting like this.","b":"Condolence Card Messages","c":"Condolence Messages for a Friend","s":"condolence-message-to-a-friend"},{"t":"I will keep checking in, even when you go quiet. Especially when you go quiet.","b":"Condolence Card Messages","c":"Condolence Messages for a Friend","s":"condolence-message-to-a-friend"},{"t":"Whatever you need, no matter how small or strange, ask me first.","b":"Condolence Card Messages","c":"Condolence Messages for a Friend","s":"condolence-message-to-a-friend"},{"t":"I am grieving with you and for you. You are so loved.","b":"Condolence Card Messages","c":"Condolence Messages for a Friend","s":"condolence-message-to-a-friend"},{"t":"Take your time. I will be right here on the other side of it.","b":"Condolence Card Messages","c":"Condolence Messages for a Friend","s":"condolence-message-to-a-friend"},{"t":"A mother's love shapes a whole life. Hers clearly shaped a wonderful one in you.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Mother","s":"sympathy-messages-for-loss-of-mother"},{"t":"There is no one quite like a mum. I am so sorry you have to miss yours.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Mother","s":"sympathy-messages-for-loss-of-mother"},{"t":"She gave you your first home, and she will always be part of the one you carry inside.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Mother","s":"sympathy-messages-for-loss-of-mother"},{"t":"The love a mother leaves behind does not fade. It becomes the way you love others.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Mother","s":"sympathy-messages-for-loss-of-mother"},{"t":"I am so sorry for the loss of your mother. What a gift she was.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Mother","s":"sympathy-messages-for-loss-of-mother"},{"t":"Her voice, her ways, her love: they live on in you now, and always will.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Mother","s":"sympathy-messages-for-loss-of-mother"},{"t":"May the memory of your mum wrap around you like the comfort she always gave.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Mother","s":"sympathy-messages-for-loss-of-mother"},{"t":"Sending you so much love as you grieve the woman who gave you everything.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Mother","s":"sympathy-messages-for-loss-of-mother"},{"t":"A mother like yours is never truly gone while you carry her with you.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Mother","s":"sympathy-messages-for-loss-of-mother"},{"t":"So sorry for your loss. May she rest gently, knowing how deeply she was loved.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Mother","s":"sympathy-messages-for-loss-of-mother"},{"t":"A good dad leaves a steadiness in you that never really goes away. His clearly did.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Father","s":"sympathy-messages-for-loss-of-father"},{"t":"I am so sorry for the loss of your father. His strength lives on in you.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Father","s":"sympathy-messages-for-loss-of-father"},{"t":"The lessons a father gives outlast him. Yours gave you plenty to carry forward.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Father","s":"sympathy-messages-for-loss-of-father"},{"t":"May you feel him in the values he passed on and the memories you hold.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Father","s":"sympathy-messages-for-loss-of-father"},{"t":"So sorry you have lost your dad. What a solid, loving man to have had.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Father","s":"sympathy-messages-for-loss-of-father"},{"t":"A father's love is often shown in quiet ways you only notice later. May those moments comfort you now.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Father","s":"sympathy-messages-for-loss-of-father"},{"t":"He was proud of you. That does not end with goodbye.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Father","s":"sympathy-messages-for-loss-of-father"},{"t":"Sending strength as you grieve the first man who taught you what it meant.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Father","s":"sympathy-messages-for-loss-of-father"},{"t":"May his memory stand beside you, the way he always did.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Father","s":"sympathy-messages-for-loss-of-father"},{"t":"So deeply sorry for your loss. May your father rest in peace.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Father","s":"sympathy-messages-for-loss-of-father"},{"t":"May God's peace, which surpasses all understanding, guard your heart in this time.","b":"Condolence Card Messages","c":"Religious Condolence Messages","s":"religious-condolence-messages"},{"t":"Praying that you feel held by grace and surrounded by love.","b":"Condolence Card Messages","c":"Religious Condolence Messages","s":"religious-condolence-messages"},{"t":"May the God of all comfort be near to you and your family now.","b":"Condolence Card Messages","c":"Religious Condolence Messages","s":"religious-condolence-messages"},{"t":"Held in prayer, and trusting that they are at rest in loving hands.","b":"Condolence Card Messages","c":"Religious Condolence Messages","s":"religious-condolence-messages"},{"t":"May faith carry you gently through the valley of this grief.","b":"Condolence Card Messages","c":"Religious Condolence Messages","s":"religious-condolence-messages"},{"t":"Praying for peace that words cannot give and comfort only love can bring.","b":"Condolence Card Messages","c":"Religious Condolence Messages","s":"religious-condolence-messages"},{"t":"May you feel God's presence in every kind word and quiet moment ahead.","b":"Condolence Card Messages","c":"Religious Condolence Messages","s":"religious-condolence-messages"},{"t":"Resting in the hope that goodbye here is not goodbye forever.","b":"Condolence Card Messages","c":"Religious Condolence Messages","s":"religious-condolence-messages"},{"t":"Sending prayers of comfort and strength to you and yours.","b":"Condolence Card Messages","c":"Religious Condolence Messages","s":"religious-condolence-messages"},{"t":"May their soul rest in peace, and may your heart find comfort in faith.","b":"Condolence Card Messages","c":"Religious Condolence Messages","s":"religious-condolence-messages"},{"t":"With love and deepest sympathy.","b":"Condolence Card Messages","c":"Funeral Flower Card Messages","s":"funeral-flower-card-messages"},{"t":"In loving memory of a beautiful soul.","b":"Condolence Card Messages","c":"Funeral Flower Card Messages","s":"funeral-flower-card-messages"},{"t":"Forever in our hearts.","b":"Condolence Card Messages","c":"Funeral Flower Card Messages","s":"funeral-flower-card-messages"},{"t":"With heartfelt condolences from all of us.","b":"Condolence Card Messages","c":"Funeral Flower Card Messages","s":"funeral-flower-card-messages"},{"t":"Rest peacefully. You were so loved.","b":"Condolence Card Messages","c":"Funeral Flower Card Messages","s":"funeral-flower-card-messages"},{"t":"Thinking of you, today and always.","b":"Condolence Card Messages","c":"Funeral Flower Card Messages","s":"funeral-flower-card-messages"},{"t":"A small tribute to a life that meant so much.","b":"Condolence Card Messages","c":"Funeral Flower Card Messages","s":"funeral-flower-card-messages"},{"t":"With sympathy and endless love.","b":"Condolence Card Messages","c":"Funeral Flower Card Messages","s":"funeral-flower-card-messages"},{"t":"Gone but never, ever forgotten.","b":"Condolence Card Messages","c":"Funeral Flower Card Messages","s":"funeral-flower-card-messages"},{"t":"Sending love to the whole family.","b":"Condolence Card Messages","c":"Funeral Flower Card Messages","s":"funeral-flower-card-messages"},{"t":"Grief comes in waves. On the days it pulls you under, remember how many hands are reaching for you.","b":"Condolence Card Messages","c":"Bereavement Messages","s":"bereavement-messages"},{"t":"There is no right way to do this. However you are grieving is okay.","b":"Condolence Card Messages","c":"Bereavement Messages","s":"bereavement-messages"},{"t":"The weeks after are often the loneliest. I am still here, still thinking of you.","b":"Condolence Card Messages","c":"Bereavement Messages","s":"bereavement-messages"},{"t":"Be gentle with yourself. You are carrying something enormous.","b":"Condolence Card Messages","c":"Bereavement Messages","s":"bereavement-messages"},{"t":"It is okay to laugh, to cry, to feel nothing, to feel everything. All of it is grief.","b":"Condolence Card Messages","c":"Bereavement Messages","s":"bereavement-messages"},{"t":"I will keep showing up, long after the flowers fade.","b":"Condolence Card Messages","c":"Bereavement Messages","s":"bereavement-messages"},{"t":"Some days survival is enough. Let it be enough.","b":"Condolence Card Messages","c":"Bereavement Messages","s":"bereavement-messages"},{"t":"You do not have to move on. You only have to move forward, slowly, in your own time.","b":"Condolence Card Messages","c":"Bereavement Messages","s":"bereavement-messages"},{"t":"I am checking in because you are on my mind and in my heart.","b":"Condolence Card Messages","c":"Bereavement Messages","s":"bereavement-messages"},{"t":"Whenever the grief feels too big, you do not have to hold it alone.","b":"Condolence Card Messages","c":"Bereavement Messages","s":"bereavement-messages"},{"t":"They were not just a pet. They were family, and family is always worth grieving.","b":"Condolence Card Messages","c":"Pet Loss Sympathy Messages","s":"pet-loss-sympathy-messages"},{"t":"What a lucky life they had, loved so completely by you.","b":"Condolence Card Messages","c":"Pet Loss Sympathy Messages","s":"pet-loss-sympathy-messages"},{"t":"The house feels different without those paws. I am so sorry.","b":"Condolence Card Messages","c":"Pet Loss Sympathy Messages","s":"pet-loss-sympathy-messages"},{"t":"They gave you their whole heart for their whole life. That is no small thing.","b":"Condolence Card Messages","c":"Pet Loss Sympathy Messages","s":"pet-loss-sympathy-messages"},{"t":"Grief this big only comes from love this big. So sorry for the loss of your sweet friend.","b":"Condolence Card Messages","c":"Pet Loss Sympathy Messages","s":"pet-loss-sympathy-messages"},{"t":"They knew nothing but your kindness. What a gift you were to each other.","b":"Condolence Card Messages","c":"Pet Loss Sympathy Messages","s":"pet-loss-sympathy-messages"},{"t":"May the happy memories of them bring you comfort in the quiet.","b":"Condolence Card Messages","c":"Pet Loss Sympathy Messages","s":"pet-loss-sympathy-messages"},{"t":"Their loyalty, their joy, their love: none of that is undone by goodbye.","b":"Condolence Card Messages","c":"Pet Loss Sympathy Messages","s":"pet-loss-sympathy-messages"},{"t":"So sorry for the loss of your beloved companion. They were so loved.","b":"Condolence Card Messages","c":"Pet Loss Sympathy Messages","s":"pet-loss-sympathy-messages"},{"t":"Run free, sweet one. You were cherished every single day.","b":"Condolence Card Messages","c":"Pet Loss Sympathy Messages","s":"pet-loss-sympathy-messages"},{"t":"The whole team is thinking of you and sending our sincere condolences.","b":"Condolence Card Messages","c":"Sympathy Messages for a Coworker","s":"sympathy-messages-for-a-coworker"},{"t":"Please take whatever time you need. We have things covered here.","b":"Condolence Card Messages","c":"Sympathy Messages for a Coworker","s":"sympathy-messages-for-a-coworker"},{"t":"So sorry for your loss. We are keeping you in our thoughts.","b":"Condolence Card Messages","c":"Sympathy Messages for a Coworker","s":"sympathy-messages-for-a-coworker"},{"t":"Wishing you comfort and peace during this difficult time.","b":"Condolence Card Messages","c":"Sympathy Messages for a Coworker","s":"sympathy-messages-for-a-coworker"},{"t":"On behalf of all of us, our heartfelt sympathy to you and your family.","b":"Condolence Card Messages","c":"Sympathy Messages for a Coworker","s":"sympathy-messages-for-a-coworker"},{"t":"There is no rush and no pressure. Focus on family. We are here when you are ready.","b":"Condolence Card Messages","c":"Sympathy Messages for a Coworker","s":"sympathy-messages-for-a-coworker"},{"t":"Sending you strength and support from everyone here.","b":"Condolence Card Messages","c":"Sympathy Messages for a Coworker","s":"sympathy-messages-for-a-coworker"},{"t":"We are so sorry. Please let us know if there is anything we can do.","b":"Condolence Card Messages","c":"Sympathy Messages for a Coworker","s":"sympathy-messages-for-a-coworker"},{"t":"Thinking of you and holding a little of this with you as your colleagues and friends.","b":"Condolence Card Messages","c":"Sympathy Messages for a Coworker","s":"sympathy-messages-for-a-coworker"},{"t":"With deepest sympathy from the whole team.","b":"Condolence Card Messages","c":"Sympathy Messages for a Coworker","s":"sympathy-messages-for-a-coworker"},{"t":"Always loved, never forgotten, forever missed.","b":"Condolence Card Messages","c":"In Loving Memory Messages","s":"in-loving-memory-messages"},{"t":"Some hearts leave footprints on ours that time never fades.","b":"Condolence Card Messages","c":"In Loving Memory Messages","s":"in-loving-memory-messages"},{"t":"In loving memory of a life that still lights our way.","b":"Condolence Card Messages","c":"In Loving Memory Messages","s":"in-loving-memory-messages"},{"t":"Gone from our side, never from our hearts.","b":"Condolence Card Messages","c":"In Loving Memory Messages","s":"in-loving-memory-messages"},{"t":"We carry you with us in everything we do.","b":"Condolence Card Messages","c":"In Loving Memory Messages","s":"in-loving-memory-messages"},{"t":"Remembering you today, and every day, with so much love.","b":"Condolence Card Messages","c":"In Loving Memory Messages","s":"in-loving-memory-messages"},{"t":"A life beautifully lived, a memory beautifully kept.","b":"Condolence Card Messages","c":"In Loving Memory Messages","s":"in-loving-memory-messages"},{"t":"Those we love do not go away. They walk beside us every day.","b":"Condolence Card Messages","c":"In Loving Memory Messages","s":"in-loving-memory-messages"},{"t":"Forever in our hearts, forever part of who we are.","b":"Condolence Card Messages","c":"In Loving Memory Messages","s":"in-loving-memory-messages"},{"t":"Still missed, still loved, still remembered with a smile.","b":"Condolence Card Messages","c":"In Loving Memory Messages","s":"in-loving-memory-messages"},{"t":"A love like yours does not end. It simply changes shape and stays with you.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Husband","s":"sympathy-messages-for-loss-of-husband"},{"t":"He was your person, and that bond does not break with goodbye.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Husband","s":"sympathy-messages-for-loss-of-husband"},{"t":"May the years you shared be a comfort now, even through the ache of missing him.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Husband","s":"sympathy-messages-for-loss-of-husband"},{"t":"So sorry for the loss of your husband. What a partnership to have had, and to grieve.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Husband","s":"sympathy-messages-for-loss-of-husband"},{"t":"The life you built together lives on in you and in everyone he loved.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Husband","s":"sympathy-messages-for-loss-of-husband"},{"t":"He was lucky to be loved by you, and you by him. That love remains yours.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Husband","s":"sympathy-messages-for-loss-of-husband"},{"t":"Sending you strength for the hardest kind of goodbye. I am here for you.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Husband","s":"sympathy-messages-for-loss-of-husband"},{"t":"May you feel him close in the small, ordinary moments you shared.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Husband","s":"sympathy-messages-for-loss-of-husband"},{"t":"There are no words for a loss this deep. Only my love, and my steady presence.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Husband","s":"sympathy-messages-for-loss-of-husband"},{"t":"Take all the time you need. Grief for a great love has no schedule.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Husband","s":"sympathy-messages-for-loss-of-husband"},{"t":"She was your partner in every sense, and that love does not leave you.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Wife","s":"sympathy-messages-for-loss-of-wife"},{"t":"So sorry for the loss of your wife. What a life you built together.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Wife","s":"sympathy-messages-for-loss-of-wife"},{"t":"May her love go on steadying you, the way it always did.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Wife","s":"sympathy-messages-for-loss-of-wife"},{"t":"The two of you were something rare. I am so sorry you have to miss her.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Wife","s":"sympathy-messages-for-loss-of-wife"},{"t":"She lives on in your memories, your children, and the life you shared.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Wife","s":"sympathy-messages-for-loss-of-wife"},{"t":"Sending you strength through a goodbye no one should have to say.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Wife","s":"sympathy-messages-for-loss-of-wife"},{"t":"Her kindness touched everyone around her, none more than you.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Wife","s":"sympathy-messages-for-loss-of-wife"},{"t":"May you feel her beside you in the quiet, familiar moments.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Wife","s":"sympathy-messages-for-loss-of-wife"},{"t":"There is no fixing this, only holding you while you carry it. I am here.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Wife","s":"sympathy-messages-for-loss-of-wife"},{"t":"A love like yours is never truly gone. It stays in everything she left behind.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Wife","s":"sympathy-messages-for-loss-of-wife"},{"t":"There are no words for this. Only love, and my presence, for as long as you need it.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Son","s":"sympathy-messages-for-loss-of-a-son"},{"t":"Your son was so loved, and so deeply proud to be yours.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Son","s":"sympathy-messages-for-loss-of-a-son"},{"t":"The bond between you does not end. He is yours, always.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Son","s":"sympathy-messages-for-loss-of-a-son"},{"t":"I will remember him with you, and say his name for as long as you want to hear it.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Son","s":"sympathy-messages-for-loss-of-a-son"},{"t":"No parent should carry this. Please let me carry the small things for you.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Son","s":"sympathy-messages-for-loss-of-a-son"},{"t":"His life, however long, mattered enormously, and so does your grief.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Son","s":"sympathy-messages-for-loss-of-a-son"},{"t":"May the love you gave him and the love he gave you be a comfort in time.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Son","s":"sympathy-messages-for-loss-of-a-son"},{"t":"I am so deeply sorry. He will never be forgotten.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Son","s":"sympathy-messages-for-loss-of-a-son"},{"t":"Lean on me. You do not have to be strong through this.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Son","s":"sympathy-messages-for-loss-of-a-son"},{"t":"He is part of you forever, and you gave him a life full of love.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Son","s":"sympathy-messages-for-loss-of-a-son"},{"t":"There is nothing I can say to ease this, only my love and my steady presence.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Daughter","s":"sympathy-messages-for-loss-of-a-daughter"},{"t":"Your daughter was cherished, and she knew it every day.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Daughter","s":"sympathy-messages-for-loss-of-a-daughter"},{"t":"She is yours forever. That does not change.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Daughter","s":"sympathy-messages-for-loss-of-a-daughter"},{"t":"I will keep her memory with you, and say her name whenever you wish.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Daughter","s":"sympathy-messages-for-loss-of-a-daughter"},{"t":"No parent should have to bear this. Let me help carry what I can.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Daughter","s":"sympathy-messages-for-loss-of-a-daughter"},{"t":"Her life brought so much love into the world, and so does your grief for her.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Daughter","s":"sympathy-messages-for-loss-of-a-daughter"},{"t":"May the love between you comfort you, even through this unbearable ache.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Daughter","s":"sympathy-messages-for-loss-of-a-daughter"},{"t":"I am so deeply sorry. She will always be remembered.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Daughter","s":"sympathy-messages-for-loss-of-a-daughter"},{"t":"You do not have to hold this alone. I am here, for as long as it takes.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Daughter","s":"sympathy-messages-for-loss-of-a-daughter"},{"t":"The love you gave her was a gift, and it is hers forever.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Daughter","s":"sympathy-messages-for-loss-of-a-daughter"},{"t":"A brother is a piece of your whole life story. I am so sorry you have lost yours.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Brother","s":"sympathy-messages-for-loss-of-a-brother"},{"t":"The bond between siblings is unlike any other. May his memory stay close.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Brother","s":"sympathy-messages-for-loss-of-a-brother"},{"t":"So sorry for the loss of your brother. What a shared history to hold.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Brother","s":"sympathy-messages-for-loss-of-a-brother"},{"t":"He knew you longer and better than almost anyone. That does not end.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Brother","s":"sympathy-messages-for-loss-of-a-brother"},{"t":"May the memories you made together bring you comfort now.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Brother","s":"sympathy-messages-for-loss-of-a-brother"},{"t":"Sending you strength as you grieve your brother and friend.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Brother","s":"sympathy-messages-for-loss-of-a-brother"},{"t":"He is part of who you are, and always will be.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Brother","s":"sympathy-messages-for-loss-of-a-brother"},{"t":"I am here for you, the way a good sibling always is.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Brother","s":"sympathy-messages-for-loss-of-a-brother"},{"t":"So sorry. May you feel him beside you in the memories you carry.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Brother","s":"sympathy-messages-for-loss-of-a-brother"},{"t":"A brother like that is never truly gone while you remember him.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Brother","s":"sympathy-messages-for-loss-of-a-brother"},{"t":"A sister holds a lifetime of your secrets and your history. I am so sorry.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Sister","s":"sympathy-messages-for-loss-of-a-sister"},{"t":"The bond you shared with your sister is yours to keep forever.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Sister","s":"sympathy-messages-for-loss-of-a-sister"},{"t":"So sorry for the loss of your sister. What a friend you had in her.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Sister","s":"sympathy-messages-for-loss-of-a-sister"},{"t":"She knew the whole of you, and loved you anyway. That love remains.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Sister","s":"sympathy-messages-for-loss-of-a-sister"},{"t":"May the memories of her bring warmth between the waves of grief.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Sister","s":"sympathy-messages-for-loss-of-a-sister"},{"t":"Sending you strength as you grieve your sister and closest friend.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Sister","s":"sympathy-messages-for-loss-of-a-sister"},{"t":"She is woven into who you are, and always will be.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Sister","s":"sympathy-messages-for-loss-of-a-sister"},{"t":"I am here for you, for the hard days and the quiet ones.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Sister","s":"sympathy-messages-for-loss-of-a-sister"},{"t":"So sorry. May you feel her with you in the small, familiar things.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Sister","s":"sympathy-messages-for-loss-of-a-sister"},{"t":"A sister like that stays with you, in memory and in love.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Sister","s":"sympathy-messages-for-loss-of-a-sister"},{"t":"A grandmother's love is a soft, steady kind that stays with you always.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandmother","s":"sympathy-messages-for-loss-of-a-grandmother"},{"t":"So sorry for the loss of your grandmother. What warmth she must have given.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandmother","s":"sympathy-messages-for-loss-of-a-grandmother"},{"t":"Her stories, her kindness, her love: they live on in your family now.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandmother","s":"sympathy-messages-for-loss-of-a-grandmother"},{"t":"May the memory of your gran wrap around you like one of her hugs.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandmother","s":"sympathy-messages-for-loss-of-a-grandmother"},{"t":"Grandmothers leave a gentleness in us that never really fades.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandmother","s":"sympathy-messages-for-loss-of-a-grandmother"},{"t":"So sorry you have lost someone who loved you so unconditionally.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandmother","s":"sympathy-messages-for-loss-of-a-grandmother"},{"t":"May you feel her in the traditions and small comforts she passed down.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandmother","s":"sympathy-messages-for-loss-of-a-grandmother"},{"t":"She was proud of you, and that pride does not end.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandmother","s":"sympathy-messages-for-loss-of-a-grandmother"},{"t":"Sending love as you grieve a woman who helped shape your family.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandmother","s":"sympathy-messages-for-loss-of-a-grandmother"},{"t":"A grandmother like that lives on in every kindness she taught you.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandmother","s":"sympathy-messages-for-loss-of-a-grandmother"},{"t":"A grandfather's quiet steadiness leaves a mark that lasts a lifetime.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandfather","s":"sympathy-messages-for-loss-of-a-grandfather"},{"t":"So sorry for the loss of your grandfather. What wisdom he must have shared.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandfather","s":"sympathy-messages-for-loss-of-a-grandfather"},{"t":"His stories and his steadiness live on in your family now.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandfather","s":"sympathy-messages-for-loss-of-a-grandfather"},{"t":"May the memory of your grandad stand beside you, the way he always did.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandfather","s":"sympathy-messages-for-loss-of-a-grandfather"},{"t":"Grandfathers pass on more than they ever say. May those lessons comfort you.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandfather","s":"sympathy-messages-for-loss-of-a-grandfather"},{"t":"So sorry you have lost a man who was proud to call you his.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandfather","s":"sympathy-messages-for-loss-of-a-grandfather"},{"t":"May you feel him in the values and small habits he handed down.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandfather","s":"sympathy-messages-for-loss-of-a-grandfather"},{"t":"He believed in you, and that does not end with goodbye.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandfather","s":"sympathy-messages-for-loss-of-a-grandfather"},{"t":"Sending strength as you grieve a cornerstone of your family.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandfather","s":"sympathy-messages-for-loss-of-a-grandfather"},{"t":"A grandfather like that lives on in everyone he shaped.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandfather","s":"sympathy-messages-for-loss-of-a-grandfather"},{"t":"Grandparents give us our roots. Losing one is losing a piece of where you come from.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandparent","s":"sympathy-messages-for-loss-of-a-grandparent"},{"t":"So sorry for the loss of your grandparent. What love and history they held.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandparent","s":"sympathy-messages-for-loss-of-a-grandparent"},{"t":"Their stories and their love live on through you now.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandparent","s":"sympathy-messages-for-loss-of-a-grandparent"},{"t":"May their memory be a warm and steady comfort in the days ahead.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandparent","s":"sympathy-messages-for-loss-of-a-grandparent"},{"t":"The lessons a grandparent leaves behind outlast them by generations.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandparent","s":"sympathy-messages-for-loss-of-a-grandparent"},{"t":"So sorry you have lost someone who loved you so freely.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandparent","s":"sympathy-messages-for-loss-of-a-grandparent"},{"t":"May you feel them in the family traditions they passed to you.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandparent","s":"sympathy-messages-for-loss-of-a-grandparent"},{"t":"They were proud of the person you have become. That pride endures.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandparent","s":"sympathy-messages-for-loss-of-a-grandparent"},{"t":"Sending love as you grieve someone who helped shape your family.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandparent","s":"sympathy-messages-for-loss-of-a-grandparent"},{"t":"A grandparent's love does not leave. It becomes part of who you are.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Grandparent","s":"sympathy-messages-for-loss-of-a-grandparent"},{"t":"There are no words for this. I am simply here, and I am not going anywhere.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Child","s":"sympathy-messages-for-loss-of-a-child"},{"t":"Your child was so deeply loved, and knew nothing but that love.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Child","s":"sympathy-messages-for-loss-of-a-child"},{"t":"They are yours forever. Nothing about that changes.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Child","s":"sympathy-messages-for-loss-of-a-child"},{"t":"I will say their name with you, for as long as you want to hear it.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Child","s":"sympathy-messages-for-loss-of-a-child"},{"t":"No parent should carry this weight. Let me carry the small things.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Child","s":"sympathy-messages-for-loss-of-a-child"},{"t":"Their life mattered beyond measure, and so does every part of your grief.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Child","s":"sympathy-messages-for-loss-of-a-child"},{"t":"May the love between you be a comfort, even through the deepest ache.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Child","s":"sympathy-messages-for-loss-of-a-child"},{"t":"I am so deeply, deeply sorry. They will never be forgotten.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Child","s":"sympathy-messages-for-loss-of-a-child"},{"t":"You do not have to hold this alone. I am here for as long as it takes.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Child","s":"sympathy-messages-for-loss-of-a-child"},{"t":"The love you gave them is theirs forever, and always will be.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Child","s":"sympathy-messages-for-loss-of-a-child"},{"t":"Your baby was real, was loved, and mattered. I am so deeply sorry.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Baby","s":"sympathy-messages-for-loss-of-a-baby"},{"t":"There are no words for this loss. Only my love and my presence.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Baby","s":"sympathy-messages-for-loss-of-a-baby"},{"t":"However short their time, the love was complete. That love is yours to keep.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Baby","s":"sympathy-messages-for-loss-of-a-baby"},{"t":"I am here to grieve with you, and to say their name whenever you wish.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Baby","s":"sympathy-messages-for-loss-of-a-baby"},{"t":"No parent should have to carry this. Please let me help however I can.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Baby","s":"sympathy-messages-for-loss-of-a-baby"},{"t":"Your baby is part of your family, now and always.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Baby","s":"sympathy-messages-for-loss-of-a-baby"},{"t":"May you be held gently through a grief the world too often overlooks.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Baby","s":"sympathy-messages-for-loss-of-a-baby"},{"t":"I am so sorry. Your baby was loved from the very first moment.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Baby","s":"sympathy-messages-for-loss-of-a-baby"},{"t":"You do not have to be strong. However you grieve is right.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Baby","s":"sympathy-messages-for-loss-of-a-baby"},{"t":"The love you already hold for them does not end. It is theirs forever.","b":"Condolence Card Messages","c":"Sympathy Messages for Loss of a Baby","s":"sympathy-messages-for-loss-of-a-baby"},{"t":"Please accept my sincere condolences. They will be truly missed.","b":"Condolence Card Messages","c":"Sincere Condolences","s":"sincere-condolences"},{"t":"My sincere sympathy to you and your family at this difficult time.","b":"Condolence Card Messages","c":"Sincere Condolences","s":"sincere-condolences"},{"t":"With genuine sorrow for your loss, and every good wish for your comfort.","b":"Condolence Card Messages","c":"Sincere Condolences","s":"sincere-condolences"},{"t":"I am sincerely sorry. Please know you are in my thoughts.","b":"Condolence Card Messages","c":"Sincere Condolences","s":"sincere-condolences"},{"t":"My heartfelt and sincere condolences to you and all who loved them.","b":"Condolence Card Messages","c":"Sincere Condolences","s":"sincere-condolences"},{"t":"With deepest sincerity, I am so sorry for your loss.","b":"Condolence Card Messages","c":"Sincere Condolences","s":"sincere-condolences"},{"t":"Please accept my genuine sympathy. I am here if you need anything at all.","b":"Condolence Card Messages","c":"Sincere Condolences","s":"sincere-condolences"},{"t":"My sincere condolences. May you find comfort among those who care for you.","b":"Condolence Card Messages","c":"Sincere Condolences","s":"sincere-condolences"},{"t":"With true sorrow for the loss of someone so clearly loved.","b":"Condolence Card Messages","c":"Sincere Condolences","s":"sincere-condolences"},{"t":"Sincerely and warmly, I am thinking of you and your family today.","b":"Condolence Card Messages","c":"Sincere Condolences","s":"sincere-condolences"},{"t":"My deepest condolences to you and your family. They were one of a kind.","b":"Condolence Card Messages","c":"My Deepest Condolences","s":"my-deepest-condolences"},{"t":"Please accept my deepest condolences. I am so sorry for your loss.","b":"Condolence Card Messages","c":"My Deepest Condolences","s":"my-deepest-condolences"},{"t":"My deepest sympathy is with you today and in the hard days ahead.","b":"Condolence Card Messages","c":"My Deepest Condolences","s":"my-deepest-condolences"},{"t":"With my deepest condolences, and a promise to be here whenever you need me.","b":"Condolence Card Messages","c":"My Deepest Condolences","s":"my-deepest-condolences"},{"t":"My deepest condolences on the loss of someone so dearly loved.","b":"Condolence Card Messages","c":"My Deepest Condolences","s":"my-deepest-condolences"},{"t":"From the bottom of my heart, my deepest condolences to you all.","b":"Condolence Card Messages","c":"My Deepest Condolences","s":"my-deepest-condolences"},{"t":"My deepest sympathies. May comfort find you in the love around you.","b":"Condolence Card Messages","c":"My Deepest Condolences","s":"my-deepest-condolences"},{"t":"Please know my deepest condolences come with my steady, ongoing support.","b":"Condolence Card Messages","c":"My Deepest Condolences","s":"my-deepest-condolences"},{"t":"My deepest condolences. They touched more lives than they ever knew.","b":"Condolence Card Messages","c":"My Deepest Condolences","s":"my-deepest-condolences"},{"t":"With the very deepest sympathy, I am holding you in my thoughts.","b":"Condolence Card Messages","c":"My Deepest Condolences","s":"my-deepest-condolences"},{"t":"My heartfelt condolences to you and your family during this painful time.","b":"Condolence Card Messages","c":"Heartfelt Condolences","s":"heartfelt-condolences"},{"t":"With all my heart, I am so sorry for your loss.","b":"Condolence Card Messages","c":"Heartfelt Condolences","s":"heartfelt-condolences"},{"t":"Sending you heartfelt sympathy and a great deal of love.","b":"Condolence Card Messages","c":"Heartfelt Condolences","s":"heartfelt-condolences"},{"t":"My heart aches for you. Please accept my heartfelt condolences.","b":"Condolence Card Messages","c":"Heartfelt Condolences","s":"heartfelt-condolences"},{"t":"With warmth and heartfelt sympathy, I am thinking of you today.","b":"Condolence Card Messages","c":"Heartfelt Condolences","s":"heartfelt-condolences"},{"t":"Heartfelt condolences to everyone who loved them. They will be missed.","b":"Condolence Card Messages","c":"Heartfelt Condolences","s":"heartfelt-condolences"},{"t":"From my heart to yours, I am so deeply sorry.","b":"Condolence Card Messages","c":"Heartfelt Condolences","s":"heartfelt-condolences"},{"t":"Sending you the most heartfelt sympathy, and my steady support.","b":"Condolence Card Messages","c":"Heartfelt Condolences","s":"heartfelt-condolences"},{"t":"My heartfelt condolences, and a reminder that you are not alone in this.","b":"Condolence Card Messages","c":"Heartfelt Condolences","s":"heartfelt-condolences"},{"t":"With a full and heavy heart, I send you my deepest sympathy.","b":"Condolence Card Messages","c":"Heartfelt Condolences","s":"heartfelt-condolences"},{"t":"Thinking of you and holding you close in my heart.","b":"Condolence Card Messages","c":"Words for a Sympathy Card","s":"words-for-a-sympathy-card"},{"t":"There are no perfect words, only my love and my presence. You have both.","b":"Condolence Card Messages","c":"Words for a Sympathy Card","s":"words-for-a-sympathy-card"},{"t":"May you feel surrounded by care, especially on the hardest days.","b":"Condolence Card Messages","c":"Words for a Sympathy Card","s":"words-for-a-sympathy-card"},{"t":"So sorry for your loss. Please lean on the people who love you.","b":"Condolence Card Messages","c":"Words for a Sympathy Card","s":"words-for-a-sympathy-card"},{"t":"What a gift it was to know them. What a loss it is to say goodbye.","b":"Condolence Card Messages","c":"Words for a Sympathy Card","s":"words-for-a-sympathy-card"},{"t":"Wishing you moments of peace between the waves of grief.","b":"Condolence Card Messages","c":"Words for a Sympathy Card","s":"words-for-a-sympathy-card"},{"t":"You are in my thoughts today and every day this week.","b":"Condolence Card Messages","c":"Words for a Sympathy Card","s":"words-for-a-sympathy-card"},{"t":"Whatever you need, at any hour, please ask me first.","b":"Condolence Card Messages","c":"Words for a Sympathy Card","s":"words-for-a-sympathy-card"},{"t":"May happy memories be a gentle comfort in time.","b":"Condolence Card Messages","c":"Words for a Sympathy Card","s":"words-for-a-sympathy-card"},{"t":"Sending you strength for today and softness for the quiet days after.","b":"Condolence Card Messages","c":"Words for a Sympathy Card","s":"words-for-a-sympathy-card"},{"t":"With sincere condolences to you and your family.","b":"Condolence Card Messages","c":"Words for a Condolence Card","s":"words-for-a-condolence-card"},{"t":"My thoughts are with you as you grieve someone so loved.","b":"Condolence Card Messages","c":"Words for a Condolence Card","s":"words-for-a-condolence-card"},{"t":"So sorry for your loss. May the memories bring quiet comfort in time.","b":"Condolence Card Messages","c":"Words for a Condolence Card","s":"words-for-a-condolence-card"},{"t":"Please accept my condolences, and my offer to help however I can.","b":"Condolence Card Messages","c":"Words for a Condolence Card","s":"words-for-a-condolence-card"},{"t":"Holding you in my thoughts through this difficult time.","b":"Condolence Card Messages","c":"Words for a Condolence Card","s":"words-for-a-condolence-card"},{"t":"With deepest sympathy for a loss that words cannot measure.","b":"Condolence Card Messages","c":"Words for a Condolence Card","s":"words-for-a-condolence-card"},{"t":"May you find comfort in the love of those around you.","b":"Condolence Card Messages","c":"Words for a Condolence Card","s":"words-for-a-condolence-card"},{"t":"Sending you strength, and the reminder that you are not alone.","b":"Condolence Card Messages","c":"Words for a Condolence Card","s":"words-for-a-condolence-card"},{"t":"So sorry. They will be remembered with great fondness.","b":"Condolence Card Messages","c":"Words for a Condolence Card","s":"words-for-a-condolence-card"},{"t":"With heartfelt condolences, and a promise to check in soon.","b":"Condolence Card Messages","c":"Words for a Condolence Card","s":"words-for-a-condolence-card"},{"t":"With our deepest sympathy.","b":"Condolence Card Messages","c":"Deepest Sympathy Notes","s":"deepest-sympathy-notes"},{"t":"Thinking of you with love and sorrow.","b":"Condolence Card Messages","c":"Deepest Sympathy Notes","s":"deepest-sympathy-notes"},{"t":"So very sorry for your loss.","b":"Condolence Card Messages","c":"Deepest Sympathy Notes","s":"deepest-sympathy-notes"},{"t":"Holding you close in our thoughts.","b":"Condolence Card Messages","c":"Deepest Sympathy Notes","s":"deepest-sympathy-notes"},{"t":"With heartfelt sympathy, always.","b":"Condolence Card Messages","c":"Deepest Sympathy Notes","s":"deepest-sympathy-notes"},{"t":"Sending love and strength your way.","b":"Condolence Card Messages","c":"Deepest Sympathy Notes","s":"deepest-sympathy-notes"},{"t":"You are not alone in this.","b":"Condolence Card Messages","c":"Deepest Sympathy Notes","s":"deepest-sympathy-notes"},{"t":"With sincere and deepest sympathy.","b":"Condolence Card Messages","c":"Deepest Sympathy Notes","s":"deepest-sympathy-notes"},{"t":"Our hearts are with you.","b":"Condolence Card Messages","c":"Deepest Sympathy Notes","s":"deepest-sympathy-notes"},{"t":"Gone from sight, forever in our hearts.","b":"Condolence Card Messages","c":"Deepest Sympathy Notes","s":"deepest-sympathy-notes"},{"t":"Please accept my sincere condolences. Take whatever time you need.","b":"Condolence Card Messages","c":"Condolence Messages for a Boss","s":"condolence-message-for-a-boss"},{"t":"I am so sorry for your loss. Please do not worry about anything here.","b":"Condolence Card Messages","c":"Condolence Messages for a Boss","s":"condolence-message-for-a-boss"},{"t":"My thoughts are with you and your family during this difficult time.","b":"Condolence Card Messages","c":"Condolence Messages for a Boss","s":"condolence-message-for-a-boss"},{"t":"Wishing you comfort and peace. We have everything covered while you are away.","b":"Condolence Card Messages","c":"Condolence Messages for a Boss","s":"condolence-message-for-a-boss"},{"t":"So sorry to hear your sad news. Please look after yourself first.","b":"Condolence Card Messages","c":"Condolence Messages for a Boss","s":"condolence-message-for-a-boss"},{"t":"With heartfelt sympathy. Please let me know if there is anything I can do.","b":"Condolence Card Messages","c":"Condolence Messages for a Boss","s":"condolence-message-for-a-boss"},{"t":"Sending you strength and support at this hard time.","b":"Condolence Card Messages","c":"Condolence Messages for a Boss","s":"condolence-message-for-a-boss"},{"t":"I am truly sorry. There is no rush and no pressure from any of us here.","b":"Condolence Card Messages","c":"Condolence Messages for a Boss","s":"condolence-message-for-a-boss"},{"t":"My condolences to you and your loved ones. Thinking of you.","b":"Condolence Card Messages","c":"Condolence Messages for a Boss","s":"condolence-message-for-a-boss"},{"t":"Please accept my deepest sympathy. We are all thinking of you.","b":"Condolence Card Messages","c":"Condolence Messages for a Boss","s":"condolence-message-for-a-boss"},{"t":"So sorry for your loss. I am right next door if you need anything at all.","b":"Condolence Card Messages","c":"Condolence Messages for a Neighbour","s":"condolence-message-for-a-neighbour"},{"t":"Thinking of you and your family. Please do not hesitate to knock.","b":"Condolence Card Messages","c":"Condolence Messages for a Neighbour","s":"condolence-message-for-a-neighbour"},{"t":"With heartfelt sympathy from all of us next door.","b":"Condolence Card Messages","c":"Condolence Messages for a Neighbour","s":"condolence-message-for-a-neighbour"},{"t":"I am so sorry. I will leave a meal on your step so that is one less thing.","b":"Condolence Card Messages","c":"Condolence Messages for a Neighbour","s":"condolence-message-for-a-neighbour"},{"t":"Sending you comfort, and a standing offer of help whenever you need it.","b":"Condolence Card Messages","c":"Condolence Messages for a Neighbour","s":"condolence-message-for-a-neighbour"},{"t":"My condolences. It is a privilege to have you as neighbours.","b":"Condolence Card Messages","c":"Condolence Messages for a Neighbour","s":"condolence-message-for-a-neighbour"},{"t":"So sorry to hear your sad news. We are only ever a few steps away.","b":"Condolence Card Messages","c":"Condolence Messages for a Neighbour","s":"condolence-message-for-a-neighbour"},{"t":"Wishing you peace during this difficult time. We are here for you.","b":"Condolence Card Messages","c":"Condolence Messages for a Neighbour","s":"condolence-message-for-a-neighbour"},{"t":"With sincere sympathy, and anything practical you might need.","b":"Condolence Card Messages","c":"Condolence Messages for a Neighbour","s":"condolence-message-for-a-neighbour"},{"t":"Thinking of you. Please lean on us the way good neighbours should.","b":"Condolence Card Messages","c":"Condolence Messages for a Neighbour","s":"condolence-message-for-a-neighbour"},{"t":"Please accept our sincere condolences during this difficult time.","b":"Condolence Card Messages","c":"Condolence Messages for a Client","s":"condolence-message-for-a-client"},{"t":"We are so sorry for your loss. Please take all the time you need.","b":"Condolence Card Messages","c":"Condolence Messages for a Client","s":"condolence-message-for-a-client"},{"t":"Our thoughts are with you and your family. There is no urgency on our side.","b":"Condolence Card Messages","c":"Condolence Messages for a Client","s":"condolence-message-for-a-client"},{"t":"With heartfelt sympathy from everyone at our team.","b":"Condolence Card Messages","c":"Condolence Messages for a Client","s":"condolence-message-for-a-client"},{"t":"So sorry to hear your sad news. Please do not give work a second thought.","b":"Condolence Card Messages","c":"Condolence Messages for a Client","s":"condolence-message-for-a-client"},{"t":"Sending you comfort and our sincere support.","b":"Condolence Card Messages","c":"Condolence Messages for a Client","s":"condolence-message-for-a-client"},{"t":"We are truly sorry. Whenever you are ready, we are here.","b":"Condolence Card Messages","c":"Condolence Messages for a Client","s":"condolence-message-for-a-client"},{"t":"Our deepest condolences to you and your loved ones.","b":"Condolence Card Messages","c":"Condolence Messages for a Client","s":"condolence-message-for-a-client"},{"t":"With sympathy and care from all of us.","b":"Condolence Card Messages","c":"Condolence Messages for a Client","s":"condolence-message-for-a-client"},{"t":"Please accept our warmest condolences at this hard time.","b":"Condolence Card Messages","c":"Condolence Messages for a Client","s":"condolence-message-for-a-client"},{"t":"You loved and cared for them through so much. That devotion was a gift.","b":"Condolence Card Messages","c":"Sympathy Messages After a Long Illness","s":"sympathy-messages-after-a-long-illness"},{"t":"Their struggle is over, and your love never wavered through any of it.","b":"Condolence Card Messages","c":"Sympathy Messages After a Long Illness","s":"sympathy-messages-after-a-long-illness"},{"t":"So sorry for your loss. You gave them comfort and dignity to the very end.","b":"Condolence Card Messages","c":"Sympathy Messages After a Long Illness","s":"sympathy-messages-after-a-long-illness"},{"t":"Grief and relief can live side by side. Whatever you feel is okay.","b":"Condolence Card Messages","c":"Sympathy Messages After a Long Illness","s":"sympathy-messages-after-a-long-illness"},{"t":"You walked the hardest road with them. Be gentle with yourself now.","b":"Condolence Card Messages","c":"Sympathy Messages After a Long Illness","s":"sympathy-messages-after-a-long-illness"},{"t":"May you find rest, and comfort in knowing how much you gave them.","b":"Condolence Card Messages","c":"Sympathy Messages After a Long Illness","s":"sympathy-messages-after-a-long-illness"},{"t":"They were surrounded by love because of you. So sorry for your loss.","b":"Condolence Card Messages","c":"Sympathy Messages After a Long Illness","s":"sympathy-messages-after-a-long-illness"},{"t":"The care you showed will be remembered as long as they are.","b":"Condolence Card Messages","c":"Sympathy Messages After a Long Illness","s":"sympathy-messages-after-a-long-illness"},{"t":"Sending you strength as you grieve, and as you finally rest.","b":"Condolence Card Messages","c":"Sympathy Messages After a Long Illness","s":"sympathy-messages-after-a-long-illness"},{"t":"So sorry. Their peace now is a mercy, even as your heart aches.","b":"Condolence Card Messages","c":"Sympathy Messages After a Long Illness","s":"sympathy-messages-after-a-long-illness"},{"t":"There was no warning and no goodbye, and that is its own kind of pain. I am so sorry.","b":"Condolence Card Messages","c":"Sympathy Messages for a Sudden Death","s":"sympathy-messages-for-a-sudden-death"},{"t":"This is such a shock. Please lean on the people who love you.","b":"Condolence Card Messages","c":"Sympathy Messages for a Sudden Death","s":"sympathy-messages-for-a-sudden-death"},{"t":"So sorry for this sudden, heartbreaking loss. I am here for you.","b":"Condolence Card Messages","c":"Sympathy Messages for a Sudden Death","s":"sympathy-messages-for-a-sudden-death"},{"t":"Take all the time you need to even begin to take this in.","b":"Condolence Card Messages","c":"Sympathy Messages for a Sudden Death","s":"sympathy-messages-for-a-sudden-death"},{"t":"There are no words for a loss this sudden. Only my love and my presence.","b":"Condolence Card Messages","c":"Sympathy Messages for a Sudden Death","s":"sympathy-messages-for-a-sudden-death"},{"t":"I am so sorry you did not get the goodbye you deserved.","b":"Condolence Card Messages","c":"Sympathy Messages for a Sudden Death","s":"sympathy-messages-for-a-sudden-death"},{"t":"Please do not face this alone. Let me carry the small things for you.","b":"Condolence Card Messages","c":"Sympathy Messages for a Sudden Death","s":"sympathy-messages-for-a-sudden-death"},{"t":"Sending you strength through a grief that arrived without warning.","b":"Condolence Card Messages","c":"Sympathy Messages for a Sudden Death","s":"sympathy-messages-for-a-sudden-death"},{"t":"So sorry. Be gentle with yourself as the shock slowly settles.","b":"Condolence Card Messages","c":"Sympathy Messages for a Sudden Death","s":"sympathy-messages-for-a-sudden-death"},{"t":"I am here, for the disbelief and the sorrow both. Whatever you need.","b":"Condolence Card Messages","c":"Sympathy Messages for a Sudden Death","s":"sympathy-messages-for-a-sudden-death"},{"t":"May the peace of God, which surpasses all understanding, guard your heart.","b":"Condolence Card Messages","c":"Christian Condolence Messages","s":"christian-condolence-messages"},{"t":"Praying for you, and trusting them into the loving hands of the Lord.","b":"Condolence Card Messages","c":"Christian Condolence Messages","s":"christian-condolence-messages"},{"t":"May God comfort you and hold you close in this time of grief.","b":"Condolence Card Messages","c":"Christian Condolence Messages","s":"christian-condolence-messages"},{"t":"Held in prayer, and in the hope that death is not the end.","b":"Condolence Card Messages","c":"Christian Condolence Messages","s":"christian-condolence-messages"},{"t":"May the Lord be your refuge and strength, a very present help in trouble.","b":"Condolence Card Messages","c":"Christian Condolence Messages","s":"christian-condolence-messages"},{"t":"Resting in the promise that those who believe shall never truly die.","b":"Condolence Card Messages","c":"Christian Condolence Messages","s":"christian-condolence-messages"},{"t":"May God's grace carry you gently through the valley of the shadow.","b":"Condolence Card Messages","c":"Christian Condolence Messages","s":"christian-condolence-messages"},{"t":"Praying that the God of all comfort draws near to you and your family.","b":"Condolence Card Messages","c":"Christian Condolence Messages","s":"christian-condolence-messages"},{"t":"May you feel His presence in every kindness shown to you now.","b":"Condolence Card Messages","c":"Christian Condolence Messages","s":"christian-condolence-messages"},{"t":"With prayers of comfort, and faith that you will meet again.","b":"Condolence Card Messages","c":"Christian Condolence Messages","s":"christian-condolence-messages"},{"t":"May their soul, and the souls of all the faithful departed, rest in peace.","b":"Condolence Card Messages","c":"Catholic Sympathy Messages","s":"catholic-sympathy-messages"},{"t":"You are in my prayers, and I will remember them at Mass.","b":"Condolence Card Messages","c":"Catholic Sympathy Messages","s":"catholic-sympathy-messages"},{"t":"Eternal rest grant unto them, O Lord, and let perpetual light shine upon them.","b":"Condolence Card Messages","c":"Catholic Sympathy Messages","s":"catholic-sympathy-messages"},{"t":"May Our Lady wrap you in her comfort during this time of sorrow.","b":"Condolence Card Messages","c":"Catholic Sympathy Messages","s":"catholic-sympathy-messages"},{"t":"Praying the Lord welcomes them home and gives you His peace.","b":"Condolence Card Messages","c":"Catholic Sympathy Messages","s":"catholic-sympathy-messages"},{"t":"Holding you and your family in prayer, and lighting a candle in their memory.","b":"Condolence Card Messages","c":"Catholic Sympathy Messages","s":"catholic-sympathy-messages"},{"t":"May the hope of the Resurrection be a comfort to you now.","b":"Condolence Card Messages","c":"Catholic Sympathy Messages","s":"catholic-sympathy-messages"},{"t":"With heartfelt prayers for them, and for your comfort and strength.","b":"Condolence Card Messages","c":"Catholic Sympathy Messages","s":"catholic-sympathy-messages"},{"t":"May they rest in the peace of Christ, and may you feel His nearness.","b":"Condolence Card Messages","c":"Catholic Sympathy Messages","s":"catholic-sympathy-messages"},{"t":"You and your loved one are remembered in my prayers and at Mass.","b":"Condolence Card Messages","c":"Catholic Sympathy Messages","s":"catholic-sympathy-messages"},{"t":"Inna lillahi wa inna ilayhi raji'un. To God we belong and to Him we return.","b":"Condolence Card Messages","c":"Islamic Condolence Messages","s":"islamic-condolence-messages"},{"t":"May Allah grant them the highest place in Jannah and give you sabr.","b":"Condolence Card Messages","c":"Islamic Condolence Messages","s":"islamic-condolence-messages"},{"t":"May Allah have mercy on their soul and ease your grief.","b":"Condolence Card Messages","c":"Islamic Condolence Messages","s":"islamic-condolence-messages"},{"t":"Praying Allah grants you patience and peace during this difficult time.","b":"Condolence Card Messages","c":"Islamic Condolence Messages","s":"islamic-condolence-messages"},{"t":"May Allah forgive them, have mercy on them, and grant them Jannah.","b":"Condolence Card Messages","c":"Islamic Condolence Messages","s":"islamic-condolence-messages"},{"t":"My heartfelt condolences. May Allah give your family strength and comfort.","b":"Condolence Card Messages","c":"Islamic Condolence Messages","s":"islamic-condolence-messages"},{"t":"May Allah reward their good deeds and comfort all who loved them.","b":"Condolence Card Messages","c":"Islamic Condolence Messages","s":"islamic-condolence-messages"},{"t":"Sending you prayers for patience and the reward of the patient.","b":"Condolence Card Messages","c":"Islamic Condolence Messages","s":"islamic-condolence-messages"},{"t":"May Allah ease your sorrow and unite you with them in the hereafter.","b":"Condolence Card Messages","c":"Islamic Condolence Messages","s":"islamic-condolence-messages"},{"t":"With sincere condolences, and prayers that Allah grants you comfort.","b":"Condolence Card Messages","c":"Islamic Condolence Messages","s":"islamic-condolence-messages"},{"t":"May their memory be a blessing.","b":"Condolence Card Messages","c":"Jewish Condolence Messages","s":"jewish-condolence-messages"},{"t":"Wishing you comfort among the mourners of Zion and Jerusalem.","b":"Condolence Card Messages","c":"Jewish Condolence Messages","s":"jewish-condolence-messages"},{"t":"May you be comforted, and may their memory be for a blessing.","b":"Condolence Card Messages","c":"Jewish Condolence Messages","s":"jewish-condolence-messages"},{"t":"Thinking of you and your family during shiva and the days ahead.","b":"Condolence Card Messages","c":"Jewish Condolence Messages","s":"jewish-condolence-messages"},{"t":"May their memory bring you comfort and their life inspire you always.","b":"Condolence Card Messages","c":"Jewish Condolence Messages","s":"jewish-condolence-messages"},{"t":"Sending you strength and comfort as you sit in their memory.","b":"Condolence Card Messages","c":"Jewish Condolence Messages","s":"jewish-condolence-messages"},{"t":"May you find peace among family and community in this time of loss.","b":"Condolence Card Messages","c":"Jewish Condolence Messages","s":"jewish-condolence-messages"},{"t":"Their memory is a blessing, and it will be for generations.","b":"Condolence Card Messages","c":"Jewish Condolence Messages","s":"jewish-condolence-messages"},{"t":"With heartfelt sympathy, and wishes of comfort to you and yours.","b":"Condolence Card Messages","c":"Jewish Condolence Messages","s":"jewish-condolence-messages"},{"t":"May the love of family and friends surround and comfort you now.","b":"Condolence Card Messages","c":"Jewish Condolence Messages","s":"jewish-condolence-messages"},{"t":"Just thinking of you today, and holding you close in my heart.","b":"Condolence Card Messages","c":"Thinking of You Sympathy Messages","s":"thinking-of-you-sympathy-messages"},{"t":"You have been on my mind. I am here whenever you need me.","b":"Condolence Card Messages","c":"Thinking of You Sympathy Messages","s":"thinking-of-you-sympathy-messages"},{"t":"Thinking of you, especially on the quiet days when grief feels heaviest.","b":"Condolence Card Messages","c":"Thinking of You Sympathy Messages","s":"thinking-of-you-sympathy-messages"},{"t":"No need to reply. I only wanted you to know I am thinking of you.","b":"Condolence Card Messages","c":"Thinking of You Sympathy Messages","s":"thinking-of-you-sympathy-messages"},{"t":"You are in my thoughts today and every day this week.","b":"Condolence Card Messages","c":"Thinking of You Sympathy Messages","s":"thinking-of-you-sympathy-messages"},{"t":"Thinking of you and sending a little strength your way.","b":"Condolence Card Messages","c":"Thinking of You Sympathy Messages","s":"thinking-of-you-sympathy-messages"},{"t":"Checking in because you are on my mind and in my heart.","b":"Condolence Card Messages","c":"Thinking of You Sympathy Messages","s":"thinking-of-you-sympathy-messages"},{"t":"Still thinking of you, long after the flowers have faded.","b":"Condolence Card Messages","c":"Thinking of You Sympathy Messages","s":"thinking-of-you-sympathy-messages"},{"t":"Thinking of you gently today, and here for whatever you need.","b":"Condolence Card Messages","c":"Thinking of You Sympathy Messages","s":"thinking-of-you-sympathy-messages"},{"t":"You are not forgotten, and neither are they. Thinking of you both.","b":"Condolence Card Messages","c":"Thinking of You Sympathy Messages","s":"thinking-of-you-sympathy-messages"},{"t":"May you find strength in one another as you grieve together.","b":"Condolence Card Messages","c":"Comforting Words for a Grieving Family","s":"comforting-words-for-a-grieving-family"},{"t":"Sending comfort to your whole family during this difficult time.","b":"Condolence Card Messages","c":"Comforting Words for a Grieving Family","s":"comforting-words-for-a-grieving-family"},{"t":"Your family is in our thoughts, today and in the days ahead.","b":"Condolence Card Messages","c":"Comforting Words for a Grieving Family","s":"comforting-words-for-a-grieving-family"},{"t":"May the love you share carry you all through this loss.","b":"Condolence Card Messages","c":"Comforting Words for a Grieving Family","s":"comforting-words-for-a-grieving-family"},{"t":"Holding your entire family close in our hearts.","b":"Condolence Card Messages","c":"Comforting Words for a Grieving Family","s":"comforting-words-for-a-grieving-family"},{"t":"So sorry for your family's loss. Lean on each other and on us.","b":"Condolence Card Messages","c":"Comforting Words for a Grieving Family","s":"comforting-words-for-a-grieving-family"},{"t":"May comfort find each of you in the memories you hold together.","b":"Condolence Card Messages","c":"Comforting Words for a Grieving Family","s":"comforting-words-for-a-grieving-family"},{"t":"With deepest sympathy to you and every member of your family.","b":"Condolence Card Messages","c":"Comforting Words for a Grieving Family","s":"comforting-words-for-a-grieving-family"},{"t":"Wishing your family peace, and offering our help however you need it.","b":"Condolence Card Messages","c":"Comforting Words for a Grieving Family","s":"comforting-words-for-a-grieving-family"},{"t":"Your loved one lives on in the family they helped to build.","b":"Condolence Card Messages","c":"Comforting Words for a Grieving Family","s":"comforting-words-for-a-grieving-family"},{"t":"Remembering them with you today, and thinking of you.","b":"Condolence Card Messages","c":"Anniversary of a Death Messages","s":"anniversary-of-a-death-messages"},{"t":"A year on, or many, they are still loved and still missed. Thinking of you.","b":"Condolence Card Messages","c":"Anniversary of a Death Messages","s":"anniversary-of-a-death-messages"},{"t":"Holding you close on a day that carries so much.","b":"Condolence Card Messages","c":"Anniversary of a Death Messages","s":"anniversary-of-a-death-messages"},{"t":"Their memory shines just as brightly today. Thinking of you both.","b":"Condolence Card Messages","c":"Anniversary of a Death Messages","s":"anniversary-of-a-death-messages"},{"t":"I remember them too, and I am thinking of you on this hard day.","b":"Condolence Card Messages","c":"Anniversary of a Death Messages","s":"anniversary-of-a-death-messages"},{"t":"Some days the missing is louder. Sending you love on this one.","b":"Condolence Card Messages","c":"Anniversary of a Death Messages","s":"anniversary-of-a-death-messages"},{"t":"Time passes, but love and memory do not fade. Thinking of you.","b":"Condolence Card Messages","c":"Anniversary of a Death Messages","s":"anniversary-of-a-death-messages"},{"t":"Remembering a life well loved, and a person deeply missed.","b":"Condolence Card Messages","c":"Anniversary of a Death Messages","s":"anniversary-of-a-death-messages"},{"t":"You are not alone in remembering them today.","b":"Condolence Card Messages","c":"Anniversary of a Death Messages","s":"anniversary-of-a-death-messages"},{"t":"Saying their name today, and holding you in my thoughts.","b":"Condolence Card Messages","c":"Anniversary of a Death Messages","s":"anniversary-of-a-death-messages"},{"t":"I was so saddened to hear of their death. My sincere condolences.","b":"Condolence Card Messages","c":"Death Condolence Messages","s":"death-condolence-messages"},{"t":"So sorry for the loss of your loved one. They will be deeply missed.","b":"Condolence Card Messages","c":"Death Condolence Messages","s":"death-condolence-messages"},{"t":"My condolences on the death of someone so clearly loved.","b":"Condolence Card Messages","c":"Death Condolence Messages","s":"death-condolence-messages"},{"t":"Sending sympathy and comfort as you grieve this loss.","b":"Condolence Card Messages","c":"Death Condolence Messages","s":"death-condolence-messages"},{"t":"I am so sorry to learn of their passing. Thinking of you and yours.","b":"Condolence Card Messages","c":"Death Condolence Messages","s":"death-condolence-messages"},{"t":"With sincere condolences on the death of someone truly special.","b":"Condolence Card Messages","c":"Death Condolence Messages","s":"death-condolence-messages"},{"t":"May the memories you hold bring comfort in the days ahead.","b":"Condolence Card Messages","c":"Death Condolence Messages","s":"death-condolence-messages"},{"t":"So sorry for your loss. Please know you are in my thoughts.","b":"Condolence Card Messages","c":"Death Condolence Messages","s":"death-condolence-messages"},{"t":"My heartfelt condolences to you and everyone who loved them.","b":"Condolence Card Messages","c":"Death Condolence Messages","s":"death-condolence-messages"},{"t":"With deepest sympathy on the loss of your loved one.","b":"Condolence Card Messages","c":"Death Condolence Messages","s":"death-condolence-messages"},{"t":"I was so sorry to hear that your loved one has passed away.","b":"Condolence Card Messages","c":"Passed Away Condolence Messages","s":"passed-away-condolence-messages"},{"t":"So sorry for your loss. They will be remembered with great love.","b":"Condolence Card Messages","c":"Passed Away Condolence Messages","s":"passed-away-condolence-messages"},{"t":"My sincere condolences on the passing of someone so dear to you.","b":"Condolence Card Messages","c":"Passed Away Condolence Messages","s":"passed-away-condolence-messages"},{"t":"Sending you comfort now that someone so loved has passed.","b":"Condolence Card Messages","c":"Passed Away Condolence Messages","s":"passed-away-condolence-messages"},{"t":"So sorry to hear of their passing. Thinking of you and your family.","b":"Condolence Card Messages","c":"Passed Away Condolence Messages","s":"passed-away-condolence-messages"},{"t":"With heartfelt sympathy on the passing of your loved one.","b":"Condolence Card Messages","c":"Passed Away Condolence Messages","s":"passed-away-condolence-messages"},{"t":"May gentle memories comfort you now that they have passed.","b":"Condolence Card Messages","c":"Passed Away Condolence Messages","s":"passed-away-condolence-messages"},{"t":"So sorry. They passed surrounded by love, and leave it behind them.","b":"Condolence Card Messages","c":"Passed Away Condolence Messages","s":"passed-away-condolence-messages"},{"t":"My condolences on the passing of a truly special person.","b":"Condolence Card Messages","c":"Passed Away Condolence Messages","s":"passed-away-condolence-messages"},{"t":"With deepest sympathy as you grieve someone who has passed away.","b":"Condolence Card Messages","c":"Passed Away Condolence Messages","s":"passed-away-condolence-messages"},{"t":"Grief is love with nowhere to go. Yours is vast because your love was.","b":"Condolence Card Messages","c":"Meaningful Sympathy Messages","s":"meaningful-sympathy-messages"},{"t":"Some people leave a mark so deep the world feels different without them.","b":"Condolence Card Messages","c":"Meaningful Sympathy Messages","s":"meaningful-sympathy-messages"},{"t":"You do not get over a loss like this. You learn, slowly, to carry it.","b":"Condolence Card Messages","c":"Meaningful Sympathy Messages","s":"meaningful-sympathy-messages"},{"t":"The love you shared cannot be undone by loss. It is yours to keep.","b":"Condolence Card Messages","c":"Meaningful Sympathy Messages","s":"meaningful-sympathy-messages"},{"t":"They live on in every life they touched, and every heart they changed.","b":"Condolence Card Messages","c":"Meaningful Sympathy Messages","s":"meaningful-sympathy-messages"},{"t":"There is no timeline for grief. Take every day it needs.","b":"Condolence Card Messages","c":"Meaningful Sympathy Messages","s":"meaningful-sympathy-messages"},{"t":"Missing someone this much is only possible because you loved them this well.","b":"Condolence Card Messages","c":"Meaningful Sympathy Messages","s":"meaningful-sympathy-messages"},{"t":"May remembering them one day bring a smile before it brings the ache.","b":"Condolence Card Messages","c":"Meaningful Sympathy Messages","s":"meaningful-sympathy-messages"},{"t":"What you are feeling is the size of what you have lost. Be gentle with it.","b":"Condolence Card Messages","c":"Meaningful Sympathy Messages","s":"meaningful-sympathy-messages"},{"t":"A life that touched so many does not truly end.","b":"Condolence Card Messages","c":"Meaningful Sympathy Messages","s":"meaningful-sympathy-messages"},{"t":"With sympathy and love, today and always.","b":"Condolence Card Messages","c":"Short Sympathy Messages","s":"short-sympathy-messages"},{"t":"Keeping you gently in my thoughts.","b":"Condolence Card Messages","c":"Short Sympathy Messages","s":"short-sympathy-messages"},{"t":"So sorry to hear your sad news.","b":"Condolence Card Messages","c":"Short Sympathy Messages","s":"short-sympathy-messages"},{"t":"Grieving right alongside you.","b":"Condolence Card Messages","c":"Short Sympathy Messages","s":"short-sympathy-messages"},{"t":"Sending you quiet strength.","b":"Condolence Card Messages","c":"Short Sympathy Messages","s":"short-sympathy-messages"},{"t":"Their memory will bring you comfort.","b":"Condolence Card Messages","c":"Short Sympathy Messages","s":"short-sympathy-messages"},{"t":"May love surround you now.","b":"Condolence Card Messages","c":"Short Sympathy Messages","s":"short-sympathy-messages"},{"t":"Thinking of your whole family.","b":"Condolence Card Messages","c":"Short Sympathy Messages","s":"short-sympathy-messages"},{"t":"May peace find you soon.","b":"Condolence Card Messages","c":"Short Sympathy Messages","s":"short-sympathy-messages"},{"t":"Held close in our hearts.","b":"Condolence Card Messages","c":"Short Sympathy Messages","s":"short-sympathy-messages"},{"t":"With heartfelt sympathy on your bereavement.","b":"Condolence Card Messages","c":"Words for a Bereavement Card","s":"words-for-a-bereavement-card"},{"t":"Thinking of you as you grieve someone so loved.","b":"Condolence Card Messages","c":"Words for a Bereavement Card","s":"words-for-a-bereavement-card"},{"t":"So sorry for your loss. Please lean on those around you.","b":"Condolence Card Messages","c":"Words for a Bereavement Card","s":"words-for-a-bereavement-card"},{"t":"May you be gently carried through this bereavement.","b":"Condolence Card Messages","c":"Words for a Bereavement Card","s":"words-for-a-bereavement-card"},{"t":"Holding you in my thoughts during this difficult time.","b":"Condolence Card Messages","c":"Words for a Bereavement Card","s":"words-for-a-bereavement-card"},{"t":"With sincere sympathy, and a promise to check in again soon.","b":"Condolence Card Messages","c":"Words for a Bereavement Card","s":"words-for-a-bereavement-card"},{"t":"May comfort find you in the memories and in the people who share them.","b":"Condolence Card Messages","c":"Words for a Bereavement Card","s":"words-for-a-bereavement-card"},{"t":"Sending you strength for the hard days and the quiet ones alike.","b":"Condolence Card Messages","c":"Words for a Bereavement Card","s":"words-for-a-bereavement-card"},{"t":"So sorry. They will be remembered with great love.","b":"Condolence Card Messages","c":"Words for a Bereavement Card","s":"words-for-a-bereavement-card"},{"t":"With deepest sympathy on your loss.","b":"Condolence Card Messages","c":"Words for a Bereavement Card","s":"words-for-a-bereavement-card"}];/*POOL_END*/
+(function(){
+var LS={dl:'smq_downloads',unlock:'smq_unlocked',email:'smq_email',favs:'smq_favs',mine:'smq_mine'};
+var CFG={salt:'',freeUses:3,minSeconds:3};
+var state={bg:0,font:'serif',size:'square'};
+var pageOpenedAt=Date.now();
+var gateMode='signup';
+
+function lsGet(k,d){try{var v=localStorage.getItem(k);return v===null?d:JSON.parse(v);}catch(e){return d;}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+function lsRaw(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function lsRawSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+function toast(m){if(window.smqToast)window.smqToast(m);}
+
+/* Remote config: the page hard-codes no salt and no thresholds. */
+fetch('/subscribe.php?config=1').then(function(r){return r.json();}).then(function(c){
+  if(c&&c.ok){CFG.salt=c.salt||'';CFG.freeUses=c.freeUses||3;CFG.minSeconds=c.minSeconds||3;updateUsesNote();}
+}).catch(function(){});
+
+var params=new URLSearchParams(location.search);
+if(params.get('gatekey')==='SMQ-KEY-7413'){lsRawSet(LS.unlock,'1');lsRawSet(LS.email,'tester@condolencecardmessages.com');toast('Tester unlock applied');}
+if(params.get('gatereset')==='SMQ-RESET-7413'){lsSet(LS.dl,0);try{localStorage.removeItem(LS.unlock);localStorage.removeItem(LS.email);}catch(e){}toast('Counter reset');}
+if(params.get('q')){document.getElementById('qtext').value=params.get('q').slice(0,300);}
+if(params.get('by')){document.getElementById('qby').value=params.get('by').slice(0,80);}
+
+/* Tabs */
+var tabs=document.querySelectorAll('.tabs button');
+function openTab(name){
+  tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.tab===name?'true':'false');});
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
+  document.getElementById('panel-'+name).classList.add('active');
+  if(name==='favorites')renderFavs();
+  if(name==='mine')renderMine();
+  if(name==='settings')renderAcctState();
+}
+tabs.forEach(function(b){b.addEventListener('click',function(){openTab(b.dataset.tab);history.replaceState(null,'','#'+b.dataset.tab);});});
+var hash=location.hash.replace('#','');
+if(['daily','favorites','mine','settings'].indexOf(hash)!==-1)openTab(hash);
+
+/* Backgrounds */
+var BGS=[
+ {name:'Plum dusk',a:'#4A3A50',b:'#37303F',ink:'#FBF3EE',acc:'#C9962E'},
+ {name:'Raspberry',a:'#A64D63',b:'#7E3348',ink:'#FFF6F1',acc:'#F2D8A7'},
+ {name:'Warm paper',a:'#FDF9F5',b:'#F3E7DE',ink:'#37303F',acc:'#A64D63'},
+ {name:'Sage calm',a:'#8FA58B',b:'#66805F',ink:'#FBFBF4',acc:'#F2E3C0'},
+ {name:'Dusty blue',a:'#7C90A6',b:'#54677E',ink:'#F6F9FC',acc:'#EFD9A0'},
+ {name:'Blush',a:'#F2DDDA',b:'#E4BEBB',ink:'#5A3A44',acc:'#A64D63'},
+ {name:'Midnight',a:'#2A2733',b:'#17151E',ink:'#F4EDE7',acc:'#C9962E'},
+ {name:'Golden hour',a:'#E8B36A',b:'#C67B44',ink:'#3D2A1E',acc:'#FFF3DD'}
+];
+var bgsEl=document.getElementById('bgs');
+BGS.forEach(function(bg,i){
+  var b=document.createElement('button');
+  b.type='button';b.title=bg.name;b.setAttribute('aria-label',bg.name);
+  b.style.background='linear-gradient(150deg,'+bg.a+','+bg.b+')';
+  b.setAttribute('aria-pressed',i===0?'true':'false');
+  b.addEventListener('click',function(){state.bg=i;bgsEl.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');draw();});
+  bgsEl.appendChild(b);
+});
+// Custom colour: build a background from any chosen colour, auto-pick readable text
+function hexToRgb(x){x=x.replace('#','');return [parseInt(x.slice(0,2),16),parseInt(x.slice(2,4),16),parseInt(x.slice(4,6),16)];}
+function luminance(r,g,b){var a=[r,g,b].map(function(v){v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);});return 0.2126*a[0]+0.7152*a[1]+0.0722*a[2];}
+function shade(hex,amt){var c=hexToRgb(hex);return '#'+c.map(function(v){var n=Math.round(v+amt);return Math.max(0,Math.min(255,n)).toString(16).padStart(2,'0');}).join('');}
+var customBgEl=document.getElementById('customBg');
+if(customBgEl){customBgEl.addEventListener('input',function(){
+  var hex=customBgEl.value;var rgb=hexToRgb(hex);var lum=luminance(rgb[0],rgb[1],rgb[2]);
+  var light=lum>0.45;
+  var custom={name:'Custom',a:shade(hex,18),b:shade(hex,-18),ink:light?'#2E2733':'#FFFDFB',acc:light?'#8E3A52':'#EBD9B4'};
+  BGS.push(custom);state.bg=BGS.length-1;
+  bgsEl.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false');});
+  draw();
+  // keep only one trailing custom entry so the array does not grow unbounded
+  if(BGS.length>9 && BGS[BGS.length-2].name==='Custom'){BGS.splice(BGS.length-2,1);state.bg=BGS.length-1;}
+});}
+document.getElementById('fonts').addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;
+  state.font=b.dataset.font;
+  this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false');});
+  b.setAttribute('aria-pressed','true');draw();
+});
+var SIZES={square:{w:1080,h:1080},pin:{w:1000,h:1500},story:{w:1080,h:1920},facebook:{w:1200,h:630},linkedin:{w:1200,h:627}};
+document.getElementById('sizes').addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;
+  state.size=b.dataset.size;
+  this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false');});
+  b.setAttribute('aria-pressed','true');draw();
+});
+document.getElementById('qtext').addEventListener('input',draw);
+document.getElementById('qby').addEventListener('input',draw);
+
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+function fontStack(weight,px){
+  if(state.font==='clean')return weight+' '+px+'px Karla, sans-serif';
+  var it=state.font==='italic'?'italic ':'';
+  return it+weight+' '+px+'px Fraunces, Georgia, serif';
+}
+function wrapLines(text,px,maxW){
+  ctx.font=fontStack('600',px);
+  var words=text.split(/\s+/),lines=[],line='';
+  words.forEach(function(w){
+    var test=line?line+' '+w:w;
+    if(ctx.measureText(test).width>maxW&&line){lines.push(line);line=w;}else{line=test;}
+  });
+  if(line)lines.push(line);
+  return lines;
+}
+
+/* ---- Original code-drawn illustrations (copyright-safe, elegant line/silhouette) ---- */
+var ILLO_STATE={illo:'none'};
+(function(){
+  var wrap=document.getElementById('illos');
+  if(wrap){wrap.addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    ILLO_STATE.illo=b.dataset.illo;
+    wrap.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false');});
+    b.setAttribute('aria-pressed','true');draw();
+  });}
+})();
+function drawIllo(name, s, col){
+  if(name==='none') return;
+  ctx.save();
+  ctx.strokeStyle=col; ctx.fillStyle=col; ctx.lineWidth=Math.max(2,s.w*.006);
+  ctx.lineJoin='round'; ctx.lineCap='round';
+  var W=s.w, H=s.h, cx=W/2;
+  if(name==='sun'){
+    ctx.globalAlpha=.5; var cyS=H*.30, r=W*.11;
+    ctx.beginPath();ctx.arc(cx,cyS,r,0,7);ctx.stroke();
+    ctx.globalAlpha=.35;
+    for(var i=0;i<12;i++){var a=i*Math.PI/6;var r1=r*1.35,r2=r*1.75;
+      ctx.beginPath();ctx.moveTo(cx+Math.cos(a)*r1,cyS+Math.sin(a)*r1);
+      ctx.lineTo(cx+Math.cos(a)*r2,cyS+Math.sin(a)*r2);ctx.stroke();}
+  } else if(name==='hills'){
+    ctx.globalAlpha=.28;
+    ctx.beginPath();ctx.moveTo(0,H*.86);
+    ctx.quadraticCurveTo(W*.28,H*.72,W*.5,H*.82);
+    ctx.quadraticCurveTo(W*.75,H*.93,W,H*.78);
+    ctx.lineTo(W,H);ctx.lineTo(0,H);ctx.closePath();ctx.fill();
+    ctx.globalAlpha=.18;
+    ctx.beginPath();ctx.moveTo(0,H*.92);
+    ctx.quadraticCurveTo(W*.35,H*.82,W*.62,H*.9);
+    ctx.quadraticCurveTo(W*.85,H*.96,W,H*.88);
+    ctx.lineTo(W,H);ctx.lineTo(0,H);ctx.closePath();ctx.fill();
+  } else if(name==='waves'){
+    ctx.globalAlpha=.3;
+    for(var w=0;w<3;w++){var y=H*(.82+w*.05);
+      ctx.beginPath();ctx.moveTo(0,y);
+      for(var x=0;x<=W;x+=W/8){ctx.quadraticCurveTo(x+W/16,y-(w%2?H*.02:-H*.02),x+W/8,y);}
+      ctx.stroke();}
+  } else if(name==='home'){
+    ctx.globalAlpha=.32; var hw=W*.16, hx=cx-hw/2, hy=H*.72, hh=W*.13;
+    ctx.beginPath();ctx.moveTo(hx,hy);ctx.lineTo(cx,hy-W*.09);ctx.lineTo(hx+hw,hy);ctx.stroke();
+    ctx.strokeRect(hx+W*.015,hy,hw-W*.03,hh);
+    var dw=hw*.22;ctx.strokeRect(cx-dw/2,hy+hh-hh*.55,dw,hh*.55);
+  } else if(name==='heart'){
+    ctx.globalAlpha=.22; var hy2=H*.28, sz=W*.11;
+    ctx.beginPath();
+    ctx.moveTo(cx,hy2+sz*.3);
+    ctx.bezierCurveTo(cx-sz,hy2-sz*.5,cx-sz*1.1,hy2+sz*.55,cx,hy2+sz);
+    ctx.bezierCurveTo(cx+sz*1.1,hy2+sz*.55,cx+sz,hy2-sz*.5,cx,hy2+sz*.3);
+    ctx.closePath();ctx.stroke();
+  } else if(name==='momchild'||name==='mombaby'){
+    // silhouette: tall figure (mother) + smaller figure (child) or cradled baby
+    ctx.globalAlpha=.30;
+    var baseY=H*.88, mH=H*.34, mx=cx - W*.03;
+    // mother head
+    var headR=W*.045;
+    ctx.beginPath();ctx.arc(mx,baseY-mH,headR,0,7);ctx.fill();
+    // mother body (bell)
+    ctx.beginPath();
+    ctx.moveTo(mx-W*.02,baseY-mH+headR);
+    ctx.quadraticCurveTo(mx-W*.11,baseY-mH*.35,mx-W*.085,baseY);
+    ctx.lineTo(mx+W*.085,baseY);
+    ctx.quadraticCurveTo(mx+W*.11,baseY-mH*.35,mx+W*.02,baseY-mH+headR);
+    ctx.closePath();ctx.fill();
+    if(name==='momchild'){
+      // child beside her
+      var chH=H*.2, chx=cx+W*.11, chR=W*.032;
+      ctx.beginPath();ctx.arc(chx,baseY-chH,chR,0,7);ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(chx-W*.015,baseY-chH+chR);
+      ctx.quadraticCurveTo(chx-W*.06,baseY-chH*.3,chx-W*.05,baseY);
+      ctx.lineTo(chx+W*.05,baseY);
+      ctx.quadraticCurveTo(chx+W*.06,baseY-chH*.3,chx+W*.015,baseY-chH+chR);
+      ctx.closePath();ctx.fill();
+    } else {
+      // cradled baby: small circle in the crook of the arm
+      ctx.beginPath();ctx.arc(mx-W*.04,baseY-mH*.55,W*.028,0,7);ctx.fill();
+    }
+  }
+  ctx.restore();
+}
+
+/* ---- Frames, little accents and text styles (all optional, code-drawn, copyright-safe) ---- */
+var FRAME_STATE={frame:'none'}, MOTIF_STATE={motif:'none'}, WORDART_STATE={wordart:'clean'};
+function wireSeg(id,stateObj,key){
+  var wrap=document.getElementById(id);
+  if(!wrap)return;
+  wrap.addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    stateObj[key]=b.dataset[key];
+    wrap.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false');});
+    b.setAttribute('aria-pressed','true');draw();
+  });
+}
+wireSeg('frames',FRAME_STATE,'frame');
+wireSeg('motifs',MOTIF_STATE,'motif');
+wireSeg('wordarts',WORDART_STATE,'wordart');
+
+var GOLD='#C9962E';
+function roundRectPath(x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y);
+  ctx.arcTo(x+w,y,x+w,y+h,r);
+  ctx.arcTo(x+w,y+h,x,y+h,r);
+  ctx.arcTo(x,y+h,x,y,r);
+  ctx.arcTo(x,y,x+w,y,r);
+  ctx.closePath();
+}
+function drawFrame(name,s,bg){
+  if(name==='none')return;
+  var W=s.w,H=s.h;
+  var m=Math.round(W*.055);          // outer margin
+  var r=Math.round(W*.03);           // corner radius
+  var lw=Math.max(2,W*.004);
+  ctx.save();
+  ctx.strokeStyle=bg.acc; ctx.fillStyle=bg.acc; ctx.lineJoin='round'; ctx.lineCap='round';
+  if(name==='minimal'){
+    ctx.globalAlpha=.85; ctx.lineWidth=lw;
+    roundRectPath(m,m,W-m*2,H-m*2,r); ctx.stroke();
+  } else if(name==='classic'){
+    ctx.globalAlpha=.9; ctx.lineWidth=lw;
+    roundRectPath(m,m,W-m*2,H-m*2,r); ctx.stroke();
+    var i=Math.round(W*.018);
+    ctx.globalAlpha=.5; ctx.lineWidth=Math.max(1,lw*.6);
+    roundRectPath(m+i,m+i,W-(m+i)*2,H-(m+i)*2,Math.max(2,r-i)); ctx.stroke();
+  } else if(name==='gold'){
+    // elegant L-shaped corner brackets only
+    ctx.strokeStyle=GOLD; ctx.globalAlpha=.95; ctx.lineWidth=Math.max(3,W*.006);
+    var L=W*.09, off=m;
+    [[off,off,1,1],[W-off,off,-1,1],[off,H-off,1,-1],[W-off,H-off,-1,-1]].forEach(function(c){
+      ctx.beginPath();
+      ctx.moveTo(c[0]+L*c[2],c[1]);
+      ctx.lineTo(c[0],c[1]);
+      ctx.lineTo(c[0],c[1]+L*c[3]);
+      ctx.stroke();
+    });
+    // tiny gold dots just inside each corner
+    ctx.globalAlpha=.8;
+    [[off+L*.55,off+L*.55],[W-off-L*.55,off+L*.55],[off+L*.55,H-off-L*.55],[W-off-L*.55,H-off-L*.55]].forEach(function(p){
+      ctx.beginPath();ctx.arc(p[0],p[1],W*.006,0,7);ctx.fill();
+    });
+  } else if(name==='arch'){
+    // framed-print mat: side + bottom keyline with an arched top
+    ctx.globalAlpha=.85; ctx.lineWidth=lw;
+    var ax=m, aw=W-m*2, aTop=m, archH=H*.13, aBot=H-m;
+    ctx.beginPath();
+    ctx.moveTo(ax,aBot);
+    ctx.lineTo(ax,aTop+archH);
+    ctx.quadraticCurveTo(ax,aTop, ax+aw*.5, aTop);
+    ctx.quadraticCurveTo(ax+aw,aTop, ax+aw,aTop+archH);
+    ctx.lineTo(ax+aw,aBot);
+    ctx.stroke();
+    // bottom baseline
+    ctx.beginPath();ctx.moveTo(ax,aBot);ctx.lineTo(ax+aw,aBot);ctx.stroke();
+  } else if(name==='botanical'){
+    // delicate leaf sprigs, top-left and bottom-right
+    ctx.globalAlpha=.5; ctx.lineWidth=Math.max(2,W*.0035);
+    function sprig(ox,oy,dir){
+      ctx.save();ctx.translate(ox,oy);ctx.scale(dir,dir);
+      ctx.beginPath();ctx.moveTo(0,0);ctx.quadraticCurveTo(W*.05,W*.03,W*.11,W*.02);ctx.stroke();
+      for(var k=1;k<=4;k++){
+        var t=k/5, bx=W*.11*t, by=W*.03*t*(1-t)*2.2;
+        // leaf
+        ctx.beginPath();
+        ctx.ellipse(bx,by-W*.012,W*.018,W*.009,-0.6,0,7);ctx.fill();
+        ctx.beginPath();
+        ctx.ellipse(bx,by+W*.012,W*.018,W*.009,0.6,0,7);ctx.fill();
+      }
+      ctx.restore();
+    }
+    sprig(m+W*.02,m+W*.02,1);
+    sprig(W-m-W*.02,H-m-W*.02,-1);
+  } else if(name==='ribbon'){
+    // small accent banner near the top centre with a folded tab
+    ctx.globalAlpha=.95;
+    var rw=W*.30, rh=H*.06, rx=(W-rw)/2, ry=H*.10, tab=rh*.5;
+    ctx.fillStyle=bg.acc;
+    ctx.beginPath();
+    ctx.moveTo(rx,ry);
+    ctx.lineTo(rx+rw,ry);
+    ctx.lineTo(rx+rw+tab,ry+rh/2);
+    ctx.lineTo(rx+rw,ry+rh);
+    ctx.lineTo(rx,ry+rh);
+    ctx.lineTo(rx-tab,ry+rh/2);
+    ctx.closePath();ctx.fill();
+    // inner hairline
+    ctx.globalAlpha=.6;ctx.strokeStyle=bg.ink;ctx.lineWidth=Math.max(1,W*.0018);
+    ctx.beginPath();
+    ctx.moveTo(rx+W*.01,ry+rh*.28);ctx.lineTo(rx+rw-W*.01,ry+rh*.28);ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(rx+W*.01,ry+rh*.72);ctx.lineTo(rx+rw-W*.01,ry+rh*.72);ctx.stroke();
+  }
+  ctx.restore();
+}
+function drawMotif(name,s,col,yCenter){
+  if(name==='none')return;
+  var W=s.w, cx=W/2, u=W*.028;
+  ctx.save();
+  ctx.fillStyle=col; ctx.strokeStyle=col; ctx.lineJoin='round'; ctx.lineCap='round';
+  ctx.lineWidth=Math.max(2,W*.004);
+  function star(sx,sy,rad){
+    ctx.beginPath();
+    for(var i=0;i<10;i++){var ang=Math.PI/5*i-Math.PI/2;var rr=i%2?rad*.45:rad;
+      var px=sx+Math.cos(ang)*rr, py=sy+Math.sin(ang)*rr;
+      i?ctx.lineTo(px,py):ctx.moveTo(px,py);}
+    ctx.closePath();ctx.fill();
+  }
+  if(name==='heart'){
+    var sz=u;
+    ctx.beginPath();
+    ctx.moveTo(cx,yCenter+sz*.35);
+    ctx.bezierCurveTo(cx-sz*1.1,yCenter-sz*.55,cx-sz*1.2,yCenter+sz*.6,cx,yCenter+sz*1.1);
+    ctx.bezierCurveTo(cx+sz*1.2,yCenter+sz*.6,cx+sz*1.1,yCenter-sz*.55,cx,yCenter+sz*.35);
+    ctx.closePath();ctx.fill();
+  } else if(name==='star'){
+    star(cx,yCenter,u*1.1);
+  } else if(name==='sparkle'){
+    star(cx,yCenter,u); star(cx-u*1.9,yCenter+u*.5,u*.5); star(cx+u*1.9,yCenter+u*.3,u*.6);
+  } else if(name==='flower'){
+    for(var p=0;p<5;p++){var a=p*2*Math.PI/5-Math.PI/2;
+      ctx.beginPath();
+      ctx.ellipse(cx+Math.cos(a)*u*.7,yCenter+Math.sin(a)*u*.7,u*.5,u*.28,a,0,7);ctx.fill();}
+    ctx.fillStyle=GOLD;ctx.beginPath();ctx.arc(cx,yCenter,u*.32,0,7);ctx.fill();
+  } else if(name==='leaf'){
+    ctx.beginPath();ctx.ellipse(cx-u*.55,yCenter,u*.7,u*.34,-0.6,0,7);ctx.fill();
+    ctx.beginPath();ctx.ellipse(cx+u*.55,yCenter,u*.7,u*.34,0.6,0,7);ctx.fill();
+    ctx.lineWidth=Math.max(2,W*.003);ctx.beginPath();ctx.moveTo(cx-u,yCenter+u*.4);ctx.lineTo(cx+u,yCenter-u*.4);ctx.stroke();
+  } else if(name==='sun'){
+    ctx.globalAlpha=.9;ctx.beginPath();ctx.arc(cx,yCenter,u*.6,0,7);ctx.fill();
+    for(var r2=0;r2<12;r2++){var ang2=r2*Math.PI/6;
+      ctx.beginPath();
+      ctx.moveTo(cx+Math.cos(ang2)*u*.85,yCenter+Math.sin(ang2)*u*.85);
+      ctx.lineTo(cx+Math.cos(ang2)*u*1.15,yCenter+Math.sin(ang2)*u*1.15);ctx.stroke();}
+  } else if(name==='baby'){
+    // simple rattle: circle head, small handle, star on it
+    ctx.beginPath();ctx.arc(cx,yCenter-u*.15,u*.75,0,7);ctx.fill();
+    ctx.lineWidth=Math.max(3,W*.006);
+    ctx.beginPath();ctx.moveTo(cx,yCenter+u*.55);ctx.lineTo(cx,yCenter+u*1.25);ctx.stroke();
+    ctx.fillStyle='#fff';star(cx,yCenter-u*.15,u*.32);
+  }
+  ctx.restore();
+}
+
+function draw(){
+  var s=SIZES[state.size];cv.width=s.w;cv.height=s.h;
+  var bg=BGS[state.bg];
+  var g=ctx.createLinearGradient(0,0,s.w,s.h);
+  g.addColorStop(0,bg.a);g.addColorStop(1,bg.b);
+  ctx.fillStyle=g;ctx.fillRect(0,0,s.w,s.h);
+  ctx.save();ctx.globalAlpha=.12;ctx.strokeStyle=bg.acc;ctx.lineWidth=s.w*.012;
+  ctx.beginPath();ctx.arc(s.w*.12,s.h*.1,s.w*.18,0,7);ctx.stroke();
+  ctx.beginPath();ctx.arc(s.w*.9,s.h*.92,s.w*.22,0,7);ctx.stroke();ctx.restore();
+  drawIllo(ILLO_STATE.illo, s, bg.acc);
+  drawFrame(FRAME_STATE.frame, s, bg);
+  var wa=WORDART_STATE.wordart;
+  var pad=s.w*.12,maxW=s.w-pad*2;
+  var text=document.getElementById('qtext').value.trim()||'Your quote here';
+  if(wa==='statement')text=text.toUpperCase();
+  var by=document.getElementById('qby').value.trim();
+  var px=Math.round(s.w*.075),lines;
+  do{lines=wrapLines(text,px,maxW);var block=lines.length*px*1.28;
+     if(block>s.h*.55||lines.some(function(l){ctx.font=fontStack('600',px);return ctx.measureText(l).width>maxW;}))px-=3;else break;
+  }while(px>26);
+  var totalH=lines.length*px*1.28;
+  var startY=(s.h-totalH)/2+px*.4;
+  ctx.textAlign='center';
+  var markScale=(wa==='quotes')?2.3:1.9;
+  var openBaseY=startY-px*1.05;
+  var markTopY=openBaseY-px*markScale*0.72;
+  // little accent sits as a compact unit just above the opening mark, always with a gap
+  if(MOTIF_STATE.motif!=='none'){
+    var motifR=s.w*0.038, mgap=px*0.5;
+    var motifCy=markTopY-mgap-motifR;
+    if(motifCy<s.w*0.03)motifCy=s.w*0.03;
+    drawMotif(MOTIF_STATE.motif,s,bg.acc,motifCy);
+  }
+  ctx.fillStyle=bg.acc;ctx.textBaseline='alphabetic';
+  ctx.font=fontStack('700',Math.round(px*markScale));
+  ctx.fillText('\u201C',s.w/2,openBaseY);
+  ctx.fillStyle=bg.ink;ctx.font=fontStack('600',px);
+  lines.forEach(function(l,i){ctx.fillText(l,s.w/2,startY+i*px*1.28);});
+  if(by){ctx.fillStyle=bg.acc;ctx.font='700 '+Math.round(s.w*.026)+'px Karla, sans-serif';
+    ctx.fillText(by.toUpperCase(),s.w/2,startY+totalH+px*.5);}
+  var afterY=startY+totalH+(by?px*1.4:px*.5);
+  var urlY=s.h-s.h*.04;
+  if(wa==='underline'){
+    ctx.strokeStyle=bg.acc;ctx.globalAlpha=.9;ctx.lineWidth=Math.max(2,s.w*.004);ctx.lineCap='round';
+    var ulw=Math.min(maxW*.5,s.w*.16);
+    ctx.beginPath();ctx.moveTo(s.w/2-ulw/2,afterY);ctx.lineTo(s.w/2+ulw/2,afterY);ctx.stroke();
+    ctx.globalAlpha=1;
+  }
+  if(wa==='quotes'){
+    // closing mark below the author, shrunk if needed so it always clears the URL stamp
+    var cScale=2.3, avail=(urlY-px*0.7)-afterY;
+    if(px*cScale*0.72>avail)cScale=Math.max(1.2,avail/(px*0.72));
+    ctx.fillStyle=bg.acc;ctx.textBaseline='top';
+    ctx.font=fontStack('700',Math.round(px*cScale));
+    ctx.fillText('\u201D',s.w/2,afterY);
+    ctx.textBaseline='alphabetic';
+  }
+  ctx.fillStyle=bg.ink;ctx.globalAlpha=.55;
+  ctx.font='700 '+Math.round(s.w*.021)+'px Karla, sans-serif';
+  ctx.fillText('condolencecardmessages.com',s.w/2,s.h-s.h*.04);
+  ctx.globalAlpha=1;
+}
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(draw);}
+draw();
+
+/* Gate */
+function unlocked(){return lsRaw(LS.unlock)==='1';}
+function usesLeft(){return Math.max(0,CFG.freeUses-lsGet(LS.dl,0));}
+function updateUsesNote(){
+  var n=document.getElementById('usesNote');
+  if(!n)return;
+  if(unlocked()){n.textContent='Card maker unlocked on this device. Currently free.';}
+  else{n.textContent=usesLeft()+' of '+CFG.freeUses+' free downloads left, then a free signup keeps it unlocked on this device.';}
+}
+updateUsesNote();
+function renderAcctState(){
+  var el=document.getElementById('acctState');
+  if(!el)return;
+  var email=lsRaw(LS.email);
+  el.textContent=(unlocked()&&email)?('Signed in as '+email+'. Every tool unlocked, free.'):'You have not signed in on this device yet.';
+}
+renderAcctState();
+
+/* ---- Embed metadata (title, quote, source URL, copyright) into the PNG on download/share ----
+   Adds standard PNG tEXt chunks so the file itself carries the quote and condolencecardmessages.com.
+   Read by Google Images, exiftool and desktop viewers. Note: most social apps strip metadata and
+   set alt text on their own, so this helps provenance and image SEO, not the platform alt tag. */
+var SMQ_CRC=(function(){var t=[];for(var n=0;n<256;n++){var c=n;for(var k=0;k<8;k++){c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1);}t[n]=c>>>0;}return t;})();
+function smqCrc32(b,s,e){var c=0xFFFFFFFF;for(var i=s;i<e;i++){c=SMQ_CRC[(c^b[i])&0xFF]^(c>>>8);}return (c^0xFFFFFFFF)>>>0;}
+function smqTextChunk(keyword,text){
+  var kw=[],i;for(i=0;i<keyword.length;i++)kw.push(keyword.charCodeAt(i)&0xFF);
+  var tx=[];for(i=0;i<text.length;i++)tx.push(text.charCodeAt(i)&0xFF);
+  var data=kw.concat([0]).concat(tx),len=data.length,out=new Uint8Array(12+len);
+  out[0]=(len>>>24)&0xFF;out[1]=(len>>>16)&0xFF;out[2]=(len>>>8)&0xFF;out[3]=len&0xFF;
+  var type=[0x74,0x45,0x58,0x74];for(i=0;i<4;i++)out[4+i]=type[i];
+  for(i=0;i<len;i++)out[8+i]=data[i];
+  var crc=smqCrc32(out,4,8+len);
+  out[8+len]=(crc>>>24)&0xFF;out[9+len]=(crc>>>16)&0xFF;out[10+len]=(crc>>>8)&0xFF;out[11+len]=crc&0xFF;
+  return out;
+}
+function smqPngWithMeta(bytes,meta){
+  var ihdrEnd=8+4+4+13+4; // sig + IHDR (len+type+13 data+crc)
+  if(bytes.length<ihdrEnd||bytes[1]!==0x50||bytes[2]!==0x4E)return bytes; // not a PNG, skip
+  var chunks=[];for(var k in meta){if(meta.hasOwnProperty(k)&&meta[k])chunks.push(smqTextChunk(k,String(meta[k])));}
+  var extra=0;chunks.forEach(function(c){extra+=c.length;});
+  var out=new Uint8Array(bytes.length+extra),off=ihdrEnd;
+  out.set(bytes.subarray(0,ihdrEnd),0);
+  chunks.forEach(function(c){out.set(c,off);off+=c.length;});
+  out.set(bytes.subarray(ihdrEnd),off);
+  return out;
+}
+function smqSlug(t){return (t||'quote').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,48)||'quote';}
+function smqCardMeta(){
+  var q=document.getElementById('qtext').value.trim()||'A message of sympathy';
+  var by=document.getElementById('qby').value.trim()||'Condolence Card Messages';
+  return {
+    Title:q.slice(0,120),
+    Description:q.slice(0,180)+' | Condolence Card Messages, condolencecardmessages.com',
+    Author:by,
+    Copyright:'Condolence Card Messages, condolencecardmessages.com',
+    Source:'https://condolencecardmessages.com',
+    Software:'Condolence Card Messages Card Maker'
+  };
+}
+function smqFilename(){return 'condolence-card-'+smqSlug(document.getElementById('qtext').value)+'-'+state.size+'.png';}
+async function smqEnrichedBlob(){
+  var blob=await canvasToBlob();
+  try{var buf=new Uint8Array(await blob.arrayBuffer());return new Blob([smqPngWithMeta(buf,smqCardMeta())],{type:'image/png'});}
+  catch(e){return blob;}
+}
+async function doDownload(){
+  draw();
+  var blob=await smqEnrichedBlob();
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement('a');
+  a.download=smqFilename();
+  a.href=url;
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+  setTimeout(function(){URL.revokeObjectURL(url);},1500);
+  toast('Card downloaded');
+}
+document.getElementById('downloadBtn').addEventListener('click',function(){
+  if(unlocked()){doDownload();return;}
+  var used=lsGet(LS.dl,0);
+  if(used<CFG.freeUses){lsSet(LS.dl,used+1);doDownload();updateUsesNote();return;}
+  showGate('signup');
+});
+
+// ---- Share: share the card image directly, no download needed (mobile native share sheet) ----
+function canvasToBlob(){return new Promise(function(res){ if(cv.toBlob){cv.toBlob(function(b){res(b);},'image/png');} else { var d=cv.toDataURL('image/png'),bs=atob(d.split(',')[1]),ab=new Uint8Array(bs.length); for(var i=0;i<bs.length;i++)ab[i]=bs.charCodeAt(i); res(new Blob([ab],{type:'image/png'})); } });}
+async function doShare(){
+  draw();
+  var blob=await smqEnrichedBlob();
+  var file=new File([blob],smqFilename(),{type:'image/png'});
+  var shareData={files:[file],title:'Condolence Card Messages',text:'A quote card from condolencecardmessages.com'};
+  // Preferred: native share with the image file (works on most phones)
+  if(navigator.canShare && navigator.canShare({files:[file]})){
+    try{ await navigator.share(shareData); toast('Shared'); return; }
+    catch(e){ if(e && e.name==='AbortError') return; }
+  }
+  // Fallback 1: share text/url only (some desktops)
+  if(navigator.share){
+    try{ await navigator.share({title:'Condolence Card Messages',text:'Make free quote cards at',url:'https://condolencecardmessages.com'}); return; }
+    catch(e){ if(e && e.name==='AbortError') return; }
+  }
+  // Fallback 2: copy the image to clipboard if supported
+  if(navigator.clipboard && window.ClipboardItem){
+    try{ await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]); toast('Card copied. Paste it anywhere'); return; }
+    catch(e){}
+  }
+  // Fallback 3: no share support at all -> download instead so the user is never stuck
+  doDownload();
+  toast('Saved. Your browser does not support direct sharing, so we downloaded it');
+}
+document.getElementById('shareBtn').addEventListener('click',function(){
+  if(unlocked()){doShare();return;}
+  var used=lsGet(LS.dl,0);
+  if(used<CFG.freeUses){lsSet(LS.dl,used+1);doShare();updateUsesNote();return;}
+  showGate('signup');
+});
+
+function showGate(mode){
+  gateMode=mode||'signup';
+  var m=document.getElementById('gateModal');
+  document.getElementById('gateErr').style.display='none';
+  document.getElementById('gateOk').style.display='none';
+  var t=document.getElementById('gateTitle'),s=document.getElementById('gateSub'),
+      b=document.getElementById('gateSubmit'),alt=document.getElementById('gateAlt'),
+      perks=document.getElementById('gatePerks');
+  if(gateMode==='signin'){
+    t.textContent='Welcome back';
+    s.textContent='Enter the same email you confirmed before and this device unlocks straight away.';
+    b.textContent='Unlock this device';
+    perks.style.display='none';
+    alt.innerHTML='New here? <button type="button" id="toSignup" style="background:none;border:0;color:var(--accent);font-weight:800;cursor:pointer;font-family:inherit;text-decoration:underline">Create your free account instead.</button>';
+    var su=document.getElementById('toSignup');
+    if(su)su.addEventListener('click',function(){showGate('signup');});
+  }else{
+    t.textContent='Keep making free cards';
+    s.textContent='You have used your three free downloads. Confirm your email to keep going.';
+    b.textContent='Send my free unlock link';
+    perks.style.display='block';
+    alt.innerHTML='Already signed up? <button type="button" id="toSignin2" style="background:none;border:0;color:var(--accent);font-weight:800;cursor:pointer;font-family:inherit;text-decoration:underline">Enter the same email to unlock this device.</button>';
+    var si=document.getElementById('toSignin2');
+    if(si)si.addEventListener('click',function(){showGate('signin');});
+    try{navigator.sendBeacon('/subscribe.php?event=gate');}catch(e){}
+  }
+  b.disabled=false;
+  m.classList.add('open');
+  document.getElementById('gateEmail').focus();
+}
+window.smqOpenGate=showGate;
+if(params.get('signin')==='1'&&!unlocked()){showGate('signin');}
+var ts0=document.getElementById('toSignin');
+if(ts0)ts0.addEventListener('click',function(){showGate('signin');});
+
+function closeGate(){document.getElementById('gateModal').classList.remove('open');}
+document.getElementById('gateModal').addEventListener('click',function(e){if(e.target===this)closeGate();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeGate();});
+
+async function sha256hex(str){
+  var buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');
+}
+function unlockDevice(email){
+  lsRawSet(LS.unlock,'1');
+  lsRawSet(LS.email,email);
+  if(window.smqRenderAccount)window.smqRenderAccount();
+  updateUsesNote();renderAcctState();
+}
+document.getElementById('gateForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var email=document.getElementById('gateEmail').value.trim().toLowerCase();
+  var err=document.getElementById('gateErr'),okmsg=document.getElementById('gateOk');
+  err.style.display='none';okmsg.style.display='none';
+  var btn=document.getElementById('gateSubmit');btn.disabled=true;btn.textContent='One moment';
+  var ts=pageOpenedAt;
+  var payload={mode:gateMode,email:email,ts:ts,website:this.website.value||''};
+  try{payload.token=await sha256hex(email+'|'+ts+'|'+CFG.salt);}catch(ex){payload.token='';}
+  try{
+    var res=await fetch('/subscribe.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    var data=null;try{data=await res.json();}catch(ex){data=null;}
+    if(res.ok&&data&&data.ok&&data.status==='verified'){
+      unlockDevice(email);closeGate();toast('Unlocked. Welcome back.');doDownload();
+    }else if(res.ok&&data&&data.ok&&data.status==='pending'){
+      /* Never auto-verify: the link in her inbox is the wall. */
+      okmsg.innerHTML='\u2709\ufe0f <strong>Check your inbox</strong> (and your spam folder). We just sent a confirmation link to <strong>'+email+'</strong>. Click it and the card maker unlocks on this device \u2014 nothing else to do.';
+      okmsg.style.display='block';
+      btn.disabled=false;btn.textContent='Resend the link';
+    }else if(res.status===400&&data&&data.error){
+      err.textContent=data.error;err.style.display='block';
+      btn.disabled=false;btn.textContent=(gateMode==='signin')?'Unlock this device':'Send my free unlock link';
+    }else{
+      /* Server trouble: fail open on the tool, but never mark verified. */
+      lsSet(LS.dl,0);closeGate();toast('Our end had a hiccup, so your cards are on us. Try signing up again later.');doDownload();
+    }
+  }catch(ex){
+    lsSet(LS.dl,0);closeGate();toast('Our end had a hiccup, so your cards are on us. Try signing up again later.');doDownload();
+  }
+});
+
+/* Favorites */
+function getFavs(){return lsGet(LS.favs,[]);}
+function toggleFav(t,b){
+  var favs=getFavs();
+  var i=favs.findIndex(function(f){return f.t===t;});
+  if(i===-1){favs.unshift({t:t,b:b});toast('Saved to favorites');}
+  else{favs.splice(i,1);toast('Removed from favorites');}
+  lsSet(LS.favs,favs);
+}
+document.getElementById('favBtn').addEventListener('click',function(){
+  toggleFav(document.getElementById('qtext').value.trim(),document.getElementById('qby').value.trim());
+});
+function quoteRow(q,removable,fromMine){
+  var d=document.createElement('div');d.className='qrow';
+  var bq=document.createElement('blockquote');bq.textContent='\u201C'+q.t+'\u201D';
+  var by=document.createElement('p');by.className='by';by.textContent=q.b||'';
+  var tools=document.createElement('div');tools.className='row-tools';
+  function mk(label,fn){var b=document.createElement('button');b.type='button';b.textContent=label;b.addEventListener('click',fn);return b;}
+  tools.appendChild(mk('Make a card',function(){
+    document.getElementById('qtext').value=q.t;
+    document.getElementById('qby').value=q.b||'';
+    openTab('maker');draw();window.scrollTo({top:0});
+  }));
+  tools.appendChild(mk('Copy',function(){
+    var full=q.t+(q.b?' ('+q.b+')':'');
+    if(navigator.clipboard)navigator.clipboard.writeText(full).then(function(){toast('Quote copied');});
+  }));
+  if(removable)tools.appendChild(mk('Remove',function(){
+    if(fromMine){var m=lsGet(LS.mine,[]);lsSet(LS.mine,m.filter(function(x){return x.t!==q.t;}));renderMine();}
+    else{toggleFav(q.t,q.b);renderFavs();}
+  }));
+  d.appendChild(bq);d.appendChild(by);d.appendChild(tools);
+  return d;
+}
+function renderFavs(){
+  var list=document.getElementById('favList');list.innerHTML='';
+  var favs=getFavs();
+  document.getElementById('favEmpty').style.display=favs.length?'none':'block';
+  favs.forEach(function(q){list.appendChild(quoteRow(q,true,false));});
+}
+
+/* My quotes */
+document.getElementById('mineAdd').addEventListener('click',function(){
+  var t=document.getElementById('mineText').value.trim();
+  if(!t){toast('Write your quote first');return;}
+  var m=lsGet(LS.mine,[]);m.unshift({t:t,b:'My own words'});lsSet(LS.mine,m);
+  document.getElementById('mineText').value='';
+  renderMine();toast('Quote saved on this device');
+});
+function renderMine(){
+  var list=document.getElementById('mineList');list.innerHTML='';
+  lsGet(LS.mine,[]).forEach(function(q){list.appendChild(quoteRow(q,true,true));});
+}
+
+/* Daily quote, with a contextual link back to its own collection */
+var pool=(typeof QUOTE_POOL!=='undefined'&&QUOTE_POOL.length)?QUOTE_POOL:[{t:'Thinking of you with love.',b:'Condolence Card Messages',c:'Condolence Messages',s:'condolence-messages'}];
+var dayIndex=Math.floor(Date.now()/86400000)%pool.length;
+var dailyOffset=0;
+function currentDaily(){return pool[(dayIndex+dailyOffset)%pool.length];}
+function showDaily(){
+  var q=currentDaily();
+  document.getElementById('dailyText').textContent=q.t;
+  document.getElementById('dailyBy').textContent=(q.b+' \u00B7 '+q.c).toUpperCase();
+  var src=document.getElementById('dailySource');
+  if(q.s){src.innerHTML='More like this in <a href="/'+q.s+'.html">'+q.c+'</a>.';}
+  else{src.textContent='';}
+}
+showDaily();
+document.getElementById('dailyShuffle').addEventListener('click',function(){dailyOffset++;showDaily();});
+document.getElementById('dailyMake').addEventListener('click',function(){
+  var q=currentDaily();
+  document.getElementById('qtext').value=q.t;
+  document.getElementById('qby').value=q.b;
+  openTab('maker');draw();window.scrollTo({top:0});
+});
+document.getElementById('dailyFav').addEventListener('click',function(){
+  var q=currentDaily();toggleFav(q.t,q.b);
+});
+
+/* Backup and restore */
+document.getElementById('backupBtn').addEventListener('click',function(){
+  var data={app:'condolencecardmessages',version:1,exported:new Date().toISOString(),favorites:getFavs(),myQuotes:lsGet(LS.mine,[])};
+  var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  var a=document.createElement('a');
+  a.download='condolencecardmessages-backup.json';
+  a.href=URL.createObjectURL(blob);
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+  toast('Backup downloaded');
+});
+document.getElementById('restoreFile').addEventListener('change',function(){
+  var f=this.files[0];if(!f)return;
+  var reader=new FileReader();
+  reader.onload=function(){
+    try{
+      var data=JSON.parse(reader.result);
+      if(data.app!=='condolencecardmessages')throw new Error('wrong file');
+      var favs=Array.isArray(data.favorites)?data.favorites:[];
+      var mine=Array.isArray(data.myQuotes)?data.myQuotes:[];
+      var ok=confirm('This backup contains '+favs.length+' favorites and '+mine.length+' of your own quotes. Restore them to this device?');
+      if(!ok)return;
+      lsSet(LS.favs,favs);lsSet(LS.mine,mine);
+      renderFavs();renderMine();toast('Backup restored');
+    }catch(e){toast('That file is not a Condolence Card Messages backup');}
+  };
+  reader.readAsText(f);
+  this.value='';
+});
+
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(function(){});}
+})();
+</script>
+</body>
+</html>

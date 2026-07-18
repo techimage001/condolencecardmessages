@@ -14,7 +14,7 @@ const DATA = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'quotes.json'), 
 const DOMAIN = DATA.domain;
 const ADS_CLIENT = 'ca-pub-4138594802747479';
 const AD_SLOT = '0000000000'; /* placeholder: swap real slot IDs before launch, see README */
-const ASSET_V='3';          /* bump on every release: busts caches for css and js */
+const ASSET_V='8';          /* bump on every release: busts caches for css and js */
 const TODAY = new Date().toISOString().slice(0, 10);
 
 /* Editorial grouping drives the "If you like this" blocks. These are
@@ -85,8 +85,12 @@ function headBlock(title, description, canonicalPath) {
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="${attr(title)}">
 <meta name="twitter:description" content="${attr(description)}">
-<link rel="icon" href="/icon-192.png">
-<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,6 +133,7 @@ function footerMega(cats) {
 <li><a href="/religious-cultural-condolences.html">Religious &amp; cultural</a></li>
 <li><a href="/who-youre-writing-to.html">Who you are writing to</a></li>
 <li><a href="/by-circumstance.html">By circumstance</a></li>
+<li><a href="/pet-loss-rainbow-bridge.html">Pet loss &amp; rainbow bridge</a></li>
 <li><a href="/all-messages.html">A to Z: all messages</a></li>
 </ul></div>
 <div><h3>Free tools</h3><ul>
@@ -149,7 +154,7 @@ function footerMega(cats) {
 <li><a href="/terms.html">Terms of use</a></li>
 </ul></div>
 </div>
-<p class="legal">&copy; ${new Date().getFullYear()} Condolence Card Messages. All messages on this site are original and free to use for your own cards and notes. The card maker is currently free to use.</p>
+<p class="legal">&copy; Condolence Card Messages. All messages on this site are original and free to use for your own cards and notes. The card maker is currently free to use.</p>
 </div></footer>
 <script src="/site.js?v=${ASSET_V}" defer></script>`;
 }
@@ -304,7 +309,7 @@ console.log('contextual in-body links across category pages: ' + linkCount);
 /* Sitemap */
 const staticPages = ['/', '/app.html', '/contact.html', '/privacy.html', '/terms.html',
   '/messages-by-relationship.html','/condolence-sympathy-wording.html','/cards-notes-remembrance.html',
-  '/religious-cultural-condolences.html','/who-youre-writing-to.html','/by-circumstance.html','/all-messages.html'];
+  '/religious-cultural-condolences.html','/who-youre-writing-to.html','/by-circumstance.html','/pet-loss-rainbow-bridge.html','/all-messages.html'];
 const urls = staticPages.concat(cats.map(c => '/' + c.slug + '.html'));
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

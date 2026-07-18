@@ -290,7 +290,9 @@ a{overflow-wrap:break-word}
 .act span{color:var(--accent)}
 
 /* ---- No horizontal drift on any device ---- */
-html,body{max-width:100%;overflow-x:hidden}
+html{max-width:100%;overflow-x:clip}
+body{max-width:100%;overflow-x:clip}
+@supports not (overflow-x:clip){body{overflow-x:hidden}}
 img,canvas,svg,video,table,pre{max-width:100%}
 .wrap{width:100%;box-sizing:border-box}
 *,*::before,*::after{box-sizing:border-box}

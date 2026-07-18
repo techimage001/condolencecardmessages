@@ -14,7 +14,7 @@ const DATA = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'quotes.json'), 
 const DOMAIN = DATA.domain;
 const ADS_CLIENT = 'ca-pub-4138594802747479';
 const AD_SLOT = '0000000000'; /* placeholder: swap real slot IDs before launch, see README */
-const ASSET_V='8';          /* bump on every release: busts caches for css and js */
+const ASSET_V='9';          /* bump on every release: busts caches for css and js */
 const TODAY = new Date().toISOString().slice(0, 10);
 
 /* Editorial grouping drives the "If you like this" blocks. These are
